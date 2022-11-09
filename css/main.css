@@ -41,9 +41,97 @@ body {
         clear: both;
 
     }
+    .container{
+        position: relative;
+        display: block;
+        width: 1200px;
+        margin: 0 auto
+        
+    }
     /* 레이아웃 */
     .wrap{
         position: relative;
         display: block;
     }
+    
+    /*  상단 */
+    .header{ 
+        display: block;
+        position: relative;
+    }
+    /*  비주얼 */
+    .visual{
+        display: block;
+        position: relative;
+
+    }
+    /*  오늘의상품 */
+    .today{
+        display: block;
+        position: relative;
+    }
+    /*  알뜰상품 */
+    .sale{
+        display: block;
+        position: relative;
+    }
+    /*  신상품 */
+    .new{
+        display: block;
+        position: relative;
+    }
+    /*  추천물품 */
+    .recommend{
+        display: block;
+        position: relative;
+    }
+    /*  인기물품 */
+    .popular{
+        display: block;
+        position: relative;
+    }
+    /*   */
+    /*  브랜드관 */
+    .brand{
+        display: block;
+        position: relative;
+    }
+    /*  배너 */
+    .banner{
+        display: block;
+        position: relative;
+    }
+    /*  체철 요리 */
+   
+    .season{
+        display: block;
+        position: relative;
+    }
+
+     /*  이용후기 */
+   
+     .review{
+        display: block;
+        position: relative;
+    }
+    
+     /* 커뮤니티 */
+   
+     .commnity{
+        display: block;
+        position: relative;
+    }
+    
+     /*  하단 */
+   
+     .footer{
+        display: block;
+        position: relative;
+    }
+    
+
+    
+    
+
+
     
