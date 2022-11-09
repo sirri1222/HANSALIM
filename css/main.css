@@ -1,137 +1,257 @@
-@charset "utf-8"
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box ;
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-a{
-    color: black;
-    text-decoration: none;
-
+a {
+  color: black;
+  text-decoration: none;
 }
-ul,li{
-    list-style: none;
+ul,
+li {
+  list-style: none;
 }
-html{ 
-    font-size: 15px;
-
+html {
+  font-size: 15px;
 }
-img{
-    border: 0;
-    vertical-align: center;
-
+img {
+  border: 0;
+  vertical-align: center;
 }
 body {
-    font-family: "Roboto", "Noto Sans KR", sans-serif;
-    font-size: 15px;
-    line-height: 24px;
-    letter-spacing: 0;
-    font-weight: 400;
-    color: #000;
-  }
-    /* 공통요소 */
-    .clearfix::after{
-        content: "";
-        position: relative;
+  font-family: "Roboto", "Noto Sans KR", sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: 0;
+  font-weight: 400;
+  color: #000;
+}
+/* 공통요소 */
+.clearfix::after {
+  content: "";
+  position: relative;
 
-        display: block;
-        width: 100%;
-        clear: both;
+  display: block;
+  width: 100%;
+  clear: both;
+}
+.container {
+  position: relative;
+  display: block;
+  width: 1200px;
+  margin: 0 auto;
+}
+/* 타이틀 레이아웃 */
+/* 제품 기본 레이아웃 */
+/* 섹션 레이아웃 */
 
-    }
-    .container{
-        position: relative;
-        display: block;
-        width: 1200px;
-        margin: 0 auto
-        
-    }
-    /* 레이아웃 */
-    .wrap{
-        position: relative;
-        display: block;
-    }
-    
-    /*  상단 */
-    .header{ 
-        display: block;
-        position: relative;
-    }
-    /*  비주얼 */
-    .visual{
-        display: block;
-        position: relative;
+/* 레이아웃 */
+.wrap {
+  position: relative;
+  display: block;
+}
 
-    }
-    /*  오늘의상품 */
-    .today{
-        display: block;
-        position: relative;
-    }
-    /*  알뜰상품 */
-    .sale{
-        display: block;
-        position: relative;
-    }
-    /*  신상품 */
-    .new{
-        display: block;
-        position: relative;
-    }
-    /*  추천물품 */
-    .recommend{
-        display: block;
-        position: relative;
-    }
-    /*  인기물품 */
-    .popular{
-        display: block;
-        position: relative;
-    }
-    /*   */
-    /*  브랜드관 */
-    .brand{
-        display: block;
-        position: relative;
-    }
-    /*  배너 */
-    .banner{
-        display: block;
-        position: relative;
-    }
-    /*  체철 요리 */
-   
-    .season{
-        display: block;
-        position: relative;
-    }
+/*  상단 */
+.header {
+  display: block;
+  position: relative;
+  z-index: 99999;
+}
+.header-top {
+  display: block;
+  position: relative;
+  background: yellow;
+  padding: 30px 30px;
+}
+.header-top-left {
+  display: block;
+  position: relative;
+  float: left;
+  /* inline 엔턴키 공백 제거  */
+  font-size: 0;
+  letter-spacing: 0;
+}
+.logo {
+  position: relative;
+  display: inline-block;
+  margin-right: 18px;
+}
 
-     /*  이용후기 */
-   
-     .review{
-        display: block;
-        position: relative;
-    }
-    
-     /* 커뮤니티 */
-   
-     .commnity{
-        display: block;
-        position: relative;
-    }
-    
-     /*  하단 */
-   
-     .footer{
-        display: block;
-        position: relative;
-    }
-    
+.bt-schedule {
+  position: relative;
+  display: inline-block;
+  font-size: 13px;
+  color: #666;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  vertical-align: 9px;
+}
+.bt-schedule img {
+  vertical-align: -2px;
+}
+.header-top-right {
+  display: block;
+  position: relative;
+  float: right;
+  padding: 3px;
+}
+.track {
+  position: relative;
+  display: inline-block;
+}
+.member-list {
+  position: relative;
+  display: inline-block;
+  vertical-align: -3px;
+}
 
-    
-    
+.member-list > li {
+  display: block;
+  position: relative;
+  float: left;
+  padding: 0 10px;
+}
+.member-list > li::after {
+  content: "";
 
+  position: absolute;
+  right: 0;
+  top: 7px;
+  height: 8px;
+  width: 1px;
+  background: #bbb;
+}
+.member-list > li:last-child {
+  padding-right: 0;
+}
+.member-list > li:last-child::after {
+  content: none;
+}
+.member-list > li > a {
+  display: block;
+  position: relative;
+  font-size: 13px;
+  color: #666;
+}
+a.center-more {
+  padding-right: 15px;
+}
+.center-more::after {
+  /*  많이 쓰임 */
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: block;
+  width: 10px;
+  height: 6px;
+  background-position: 0px 0px;
 
-    
+  background: url("../images/icoMyMenu.png") no-repeat;
+}
+.center-list {
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 25px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+  z-index: 1;
+}
+.center-list > li {
+  display: block;
+  position: relative;
+}
+.center-list > li > a {
+  display: block;
+  position: relative;
+  color: #666;
+  font-size: 13px;
+  white-space: nowrap;
+
+  /* 줄내림 놉 */
+}
+.center-more:hover {
+  background-position: 0px -6px;
+}
+
+.header-main {
+  display: block;
+  position: relative;
+}
+/*  비주얼 */
+.visual {
+  display: block;
+  position: relative;
+}
+/*  오늘의상품 */
+.today {
+  display: block;
+  position: relative;
+}
+/*  알뜰상품 */
+.sale {
+  display: block;
+  position: relative;
+}
+/*  신상품 */
+.new {
+  display: block;
+  position: relative;
+}
+/*  추천물품 */
+.recommend {
+  display: block;
+  position: relative;
+}
+/*  인기물품 */
+.popular {
+  display: block;
+  position: relative;
+}
+/*   */
+/*  브랜드관 */
+.brand {
+  display: block;
+  position: relative;
+}
+/*  배너 */
+.banner {
+  display: block;
+  position: relative;
+}
+/*  체철 요리 */
+
+.season {
+  display: block;
+  position: relative;
+}
+
+/*  이용후기 */
+
+.review {
+  display: block;
+  position: relative;
+}
+
+/* 커뮤니티 */
+
+.commnity {
+  display: block;
+  position: relative;
+}
+
+/*  하단 */
+
+.footer {
+  display: block;
+  position: relative;
+}
