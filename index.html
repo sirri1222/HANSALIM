@@ -4,28 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>한살림 장보기 :: 지구를 살리는 뜻깊은 생활실천, 한살림</title>
-
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="theme-color" content="#7FC31C" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
-    />
-    <meta
-      name="naver-site-verification"
-      content="a9773a98d9c828bd02276feedbf0b4445b09016b"
-    />
-    <meta
-      name="google-site-verification"
-      content="google9b2b913b609553cb.html"
-    />
-    <meta
-      name="facebook-domain-verification"
-      content="jkne6hnh6rkjtthjgixog41ioxdgkk"
-    />
-
     <!-- SEO -->
     <meta name="author" content="한살림" />
     <meta
@@ -71,31 +49,56 @@
       name="twitter:image"
       content="https://shop.hansalim.or.kr/shopping/resources/shopping/web/images/common/hansalim_sns_logo.png"
     />
-
-    <!-- favicon -->
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="images/favicon_package_v0.16 (3)/apple-touch-icon.png"
+      href="images/icon/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="images/favicon_package_v0.16 (3)/favicon-32x32.png"
+      href="images/icon/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="images/favicon_package_v0.16 (3)/favicon-16x16.png"
+      href="images/icon/favicon-16x16.png"
     />
+    <link rel="manifest" href="images/icon/site.webmanifest" />
     <link
-      rel="manifest"
-      href="images/favicon_package_v0.16 (3)/site.webmanifest"
+      rel="mask-icon"
+      href="images/icon/safari-pinned-tab.svg"
+      color="#5bbad5"
     />
     <meta name="msapplication-TileColor" content="#da532c" />
-    <link rel="stylesheet" href="./css/main.css" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <title>한살림 장보기 :: 지구를 살리는 뜻깊은 생활실천, 한살림</title>
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <!-- IE 9 이하는 HTML5 태그를 지원하지 않는다. -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    <!-- CSS3 적용 -->
+    <script src="js/prefixfree.min.js"></script>
+    <!-- css 초기화 -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- fontawsome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
     <!-- 기본레이아웃 -->
@@ -140,7 +143,65 @@
             </div>
           </div>
 
-          <div class="header-main"></div>
+          <div class="header-main clearfix">
+            <!-- 헤더메인왼쪽 -->
+            <div class="header-main-left">
+              <nav class="nav">
+                <ul class="gnb clearfix">
+                  <li>
+                    <button class="all-bt">
+                      <i class="fa-solid fa-bars"></i>
+                      전체물품
+                    </button>
+                  </li>
+                  <li><a href="#">추천</a></li>
+                  <li><a href="#">알뜰</a></li>
+                  <li><a href="#">새물품</a></li>
+                  <li><a href="#">사전예약</a></li>
+                  <li><a href="#" class="ball">영유아</a></li>
+                  <li><a href="#" class="ball">채식</a></li>
+                  <li>
+                    <button class="join-bt">
+                      참여 <i class="join-bt-icon"></i>
+                    </button>
+                    <ul class="join-list">
+                      <li><a href="#">신규물품제안</a></li>
+                      <li><a href="#">모임과행사</a></li>
+                      <li><a href="#">참여이벤트</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+              <div class="more-menu">
+                <button class="more-menu-bt">
+                  더보기<i class="more-menu-icon"></i>
+                </button>
+                <ul class="more-menu-list">
+                  <li><a href="#">한살림이야기</a></li>
+                  <li><a href="#">생산자와 물품</a></li>
+                  <li><a href="#">세상의 밥</a></li>
+                  <li><a href="#">요리</a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- //헤더메인왼쪽 -->
+            <!--헤더메인 오른쪽  -->
+            <div class="header-main-right clearfix">
+              <form action="" method="get" class="search-form">
+                <input
+                  type="text"
+                  class="search-txt"
+                  placeholder="무엇을 찾아드릴까요?"
+                />
+                <input type="submit" class="search-bt" />
+            </form>
+              
+            <a href="#" class="bucket">
+              <span class="bucket-count">0</span>
+            </a>
+            </div>
+            <!--//헤더 메인 오른쪽  -->
+          </div>
         </div>
       </header>
       <!--비주얼  -->

@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline-style: none;
 }
 a {
   color: black;
@@ -30,6 +31,8 @@ body {
   color: #000;
 }
 /* 공통요소 */
+
+
 .clearfix::after {
   content: "";
   position: relative;
@@ -59,12 +62,14 @@ body {
   display: block;
   position: relative;
   z-index: 99999;
+  border-bottom: 1px solid #eee ;
+  background: white;
 }
 .header-top {
   display: block;
   position: relative;
-  background: yellow;
-  padding: 30px 30px;
+  
+  padding-top: 30px;
 }
 .header-top-left {
   display: block;
@@ -155,7 +160,7 @@ a.center-more {
   background: url("../images/icoMyMenu.png") no-repeat;
 }
 .center-list {
-  display: block;
+  display: none;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -181,11 +186,266 @@ a.center-more {
 }
 .center-more:hover {
   background-position: 0px -6px;
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-thickness: 2px;
+
 }
 
 .header-main {
   display: block;
   position: relative;
+  padding: 13px 0;
+}
+.header-main-left {
+  display: block;
+  position: relative;
+  float: left;
+}
+.nav{
+  display: inline-block;
+  position: relative;
+  padding-top: 12px;
+  margin-right: 45px;
+}
+
+.gnb{
+  display: block;
+  position: relative;
+  
+}
+.gnb >li{
+  display: block;
+  position: relative;
+  float: left;
+  
+  margin-right: 30px;
+}
+.gnb >li:last-child{
+  margin-right: 0;
+}
+.gnb >li >a
+{
+  display: block;
+  position: relative;
+  font-weight: 500;
+  font-size: 17px;
+  color: #000;
+  line-height: 19px;
+
+ 
+}
+.gnb>li >a:hover{
+  background: #76bd42;
+
+}
+.ball::after{
+content: "";
+position: absolute;
+right: -7px;
+top: 0px;
+width: 5px;
+height: 5px;
+background: #ff9933;
+border-radius: 50%;
+}
+.all-bt{
+  display: block;
+  position: relative;
+  font-weight: 500;
+  font-size: 17px;
+  color: #000;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  line-height: 19px;
+
+
+}
+.all-bt> i{
+  margin-right: 15px;
+  display: inline-block;
+  /* block 주면 줄내림됨 옆에 아무도못옴  */
+
+}
+.join-bt{
+  display: block;
+
+  font-weight: 500;
+  font-size: 17px;
+  color: #000;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  line-height: 19px;
+}
+.join-bt:hover{
+  color: #76bd42;
+}
+
+.join-bt-icon{
+  position: relative;
+  display: inline-block;
+  width: 12px;
+  height: 8px;
+  background: url("../images/icoGnbArr2.png")no-repeat;
+  background-position: 0px 0px;
+  vertical-align: 2px;
+  margin-left: 2px;
+
+
+}
+.join-list, 
+.more-menu-list{
+  position: absolute;
+  left: 50%;
+  /* 좌표가 아닌 보이는 영역의 내용을 이동한다 */
+  transform: translateX(-50%);
+  top: 42px;
+  display: block;
+  padding: 20px;
+  background: white;
+  border:  1px solid #ddd;
+  box-shadow:  0px 3px 6px 0px rgb(0 0 0 / 16%);
+  
+}
+.join-list >li,
+.more-menu-list>li{
+  position: relative;
+  display: block;
+  padding: 7px 0;
+  text-align: left;
+}
+.join-list>li> a,
+.more-menu-list> li >a{
+  position: relative;
+  display: inline-block;
+  font-size: 15px;
+  color: #666;
+  line-height: 37px;
+  white-space: nowrap;
+  line-height: 19px;
+ 
+  border-bottom: 2px solid white;
+}
+.join-list >li >a:hover,
+.more-menu-list>li>a:hover{
+  /* text-decoration: underline;
+
+  text-underline-position: under;
+  text-decoration-thickness: 2px; */
+  border-bottom: 2px solid #000;
+  font-weight: 600;
+  color: #000;
+}
+.join-bt:hover .join-bt-icon{
+  background-position: 0px -8px;
+}
+.more-menu
+
+{
+  display: inline-block;
+  position: relative;
+ 
+
+}
+.more-menu-bt{
+  display: inline-block;
+  position: relative;
+ 
+  font-size: 13px;
+  color: #666;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  line-height: 19px;
+  vertical-align: 5px;
+}
+.more-menu-icon{
+  display: inline-block;
+  width: 10px;
+  height: 6px;
+  background: url(../images/icoGnbArr3.png) no-repeat;
+  background-position: 0px 0px;
+  margin-right: 3px;
+  vertical-align: px;
+}
+.more-menu-bt:hover{
+  color: #76bd42;
+}
+.more-menu-bt:hover> .more-menu-icon{
+  background-position: 0 -6px;
+}
+.header-main-right {
+  display: block;
+  position: relative;
+  float: right;
+  
+}
+.search-form{
+  display: block;
+  position: relative;
+  float: left;
+}
+.search-txt {
+  position: relative;
+  display: block;
+  width: 320px;
+  height: 40px;
+  background: #f7f7f7;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-right: 45px;
+  border: 1px solid #f7f7f7;
+  line-height: 40px;
+  font-size: 13px;
+}
+.search-txt:focus {
+  background: #fff;
+  border: 1px solid #76bd42;
+  color: #000;
+}
+
+
+.search-bt{
+  position: absolute;
+  top: 50%;
+  /*좌표는결정했는데 보이는내용물의 높이를 50%만큼 위로 올린다  */
+  transform: translateY(-50%);
+  right: 20px;
+  display: block;
+  border: 0;
+  width: 18px;
+  height: 18px;
+  background: url("../images/btnSearch.png") no-repeat;
+  cursor: pointer;
+  font-size: 0;
+}
+.bucket{
+   display: block;
+  position: relative;
+width: 30px;
+height: 30px;
+background: url("../images/btnCart.png");
+font-size: 0;
+float: left;
+margin-top: 6px;
+margin-left: 25px;
+}
+.bucket-count{
+  position: absolute;
+  display: block;
+  right: -5px;
+  top: -1px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  color: #fff;
+  background: #76bd42;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
 }
 /*  비주얼 */
 .visual {
