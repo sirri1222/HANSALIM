@@ -30,6 +30,26 @@ body {
   font-weight: 400;
   color: #000;
 }
+/* 섹션레이아웃 공통패딩 */
+.wrap > section{
+  padding: 80px 0;
+
+}
+/* 타이틀 레이아웃 */
+.section-title {
+  position: relative;
+  display: block;
+  font-size: 32px;
+  line-height: 40px;
+  color: #000;
+  font-weight: 400;
+}
+.section-title b {
+  font-weight: 700;
+}
+.section-title .blue {
+  color: #76bd42;
+}
 /* 공통요소 */
 
 
@@ -451,7 +471,115 @@ margin-left: 25px;
 .visual {
   display: block;
   position: relative;
+  width: 100%;
+  height: 410px;
+  overflow: hidden;
+  padding: 0; !important
+  
 }
+.visual-slide{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.visual-slide-page{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.visual-slide-page a{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.visual-prev, 
+.visual-next
+{
+  position: absolute;
+  
+  top: 50%;
+  /* 죄표고정 내용물만 옯김 */
+  transform: translateY(-50%);
+  display: block;
+  border: 0;
+  cursor: pointer;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+.visual-prev:hover{
+  background: rgb(0, 0, 0, 0.3) url("../images/visualArrP.png") no-repeat;
+  background-position: 0 -64px;
+
+}
+.visual-prev{
+  left: calc(50% - 600px);
+  background: rgb(0, 0, 0, 0.0) url("../images/visualArrP.png") no-repeat;
+ background-position: 0 -64px;
+}
+
+.visual-next{
+  right: calc(50% - 600px);
+  background-position: 0 -64px;
+  background: rgb(0, 0, 0, 0.0) url("../images/visualArrN.png") no-repeat;
+}
+.visual-next:hover{
+  background: rgb(0, 0, 0, 0.3) url("../images/visualArrP.png") no-repeat;
+  background-position: 0 -64px;
+
+}
+.visual-control{
+  position: absolute;
+  bottom: 43px;
+ 
+  left: calc(50% - 600px + 80px);
+  display: block;
+}
+.visual-play{
+
+
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url("../images/visualPlay.png");
+  float: left;
+  border: 0;
+  
+}
+.visual-pg{
+  display: block;
+  position: relative;
+  width: 52px;
+  height: 30px;
+  background: url("../images/visualNum.png") no-repeat;
+  float: left;
+  font-size: 14px;
+  font-weight: 700;
+  margin-left: 5px;
+  text-align: center;
+  color: #fff;
+
+
+}
+.visual-more{
+  display: block;
+  position: relative;
+  width: 29px;
+  height: 30px;
+  background: url("../images/visualMore.png") no-repeat;
+  cursor: pointer;
+  border: 0;
+  margin-left: 3px;
+  float: left;
+}
+
+
+
 /*  오늘의상품 */
 .today {
   display: block;
