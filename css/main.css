@@ -8,7 +8,7 @@
   outline-style: none;
 }
 a {
-  color: black;
+  color: #000;
   text-decoration: none;
 }
 ul,
@@ -20,7 +20,7 @@ html {
 }
 img {
   border: 0;
-  vertical-align: center;
+  vertical-align: top;
 }
 body {
   font-family: "Roboto", "Noto Sans KR", sans-serif;
@@ -31,9 +31,8 @@ body {
   color: #000;
 }
 /* 섹션레이아웃 공통패딩 */
-.wrap > section{
+.wrap > section {
   padding: 80px 0;
-
 }
 .good-slide {
   position: relative;
@@ -47,8 +46,6 @@ body {
   margin-right: 0;
   float: right;
 }
-
-
 
 /* 타이틀 레이아웃 */
 .section-title {
@@ -66,8 +63,7 @@ body {
 .section-title .blue {
   color: #76bd42;
 }
-.section-bt{
-
+.section-bt {
   position: relative;
   display: block;
   width: 114px;
@@ -81,12 +77,12 @@ body {
   transition: background 0.5s;
 }
 
-.section-bt:hover{
+.section-bt:hover {
   background: #f9f9f9;
 }
 
-.slide-prev, 
-.slide-next{
+.slide-prev,
+.slide-next {
   position: absolute;
   width: 26px;
   height: 20px;
@@ -97,42 +93,39 @@ body {
 
   display: block;
 }
-.slide-prev{
+.slide-prev {
   left: 0;
   background: url("../images/swiperArrP.png") no-repeat;
-
 }
-.slide-prev:hover{
+.slide-prev:hover {
   background-position: 0 -20px;
 }
 
-.slide-next{
+.slide-next {
   right: 0;
   background: url("../images/swiperArrN.png") no-repeat;
 }
-.slide-next:hover{
+.slide-next:hover {
   background-position: 0 -20px;
 }
-.slide-control{
+.slide-control {
   position: relative;
   display: block;
   width: 140px;
 }
 
-.slide-pg{
+.slide-pg {
   position: relative;
   display: block;
   text-align: center;
 }
-.slide-control{
+.slide-control {
   position: relative;
   margin-top: 0;
   width: 140px;
   display: block;
-  
- }
+}
 /* 공통요소 */
-
 
 .clearfix::after {
   content: "";
@@ -148,10 +141,10 @@ body {
   width: 1200px;
   margin: 0 auto;
 }
-.section-bar{
+.section-bar {
   padding-bottom: 15px;
 }
-.section-bar::after{
+.section-bar::after {
   position: absolute;
   content: "";
   left: 0;
@@ -159,16 +152,15 @@ body {
   width: 20px;
   height: 2px;
   background: #707070;
-
 }
 /* 타이틀 레이아웃 */
 
-.section-title-txt{
+.section-title-txt {
   position: relative;
   display: block;
   margin-bottom: 20px;
 }
-.section-bt{
+.section-bt {
   position: relative;
   display: block;
 }
@@ -182,7 +174,7 @@ body {
   overflow: hidden;
 }
 
-.good-img{
+.good-img {
   position: relative;
   display: block;
   width: 100%;
@@ -190,14 +182,14 @@ body {
   overflow: hidden;
 }
 .good-img > img {
-transition: transform 0.5s;
+  transition: transform 0.5s;
 }
 
-.good-img:hover > img{
+.good-img:hover > img {
   /* 위치는 그대로두고 보이는 것을 변형한다 */
   transform: scale(1.1);
 }
-.good-type{
+.good-type {
   position: absolute;
   right: 0;
   top: 0;
@@ -210,9 +202,8 @@ transition: transform 0.5s;
   font-size: 14px;
   background: #76bd42;
   font-weight: 500;
-
 }
-.good-info{
+.good-info {
   position: relative;
   display: block;
   width: 100%;
@@ -238,11 +229,9 @@ transition: transform 0.5s;
   font-style: normal;
 }
 
-
-
-.good-add-cart{
+.good-add-cart {
   position: absolute;
-   right: 20px;
+  right: 20px;
   bottom: 45px;
 
   display: block;
@@ -253,36 +242,36 @@ transition: transform 0.5s;
   border: 0;
   cursor: pointer;
 }
-.no-mb{
-margin-bottom: 0;
+.no-mb {
+  margin-bottom: 0;
 }
 .layout-wrap {
   position: relative;
   display: block;
 }
 
-.layout-left{
+.layout-left {
   position: relative;
   display: block;
   float: left;
   width: calc(100% - 900px);
 }
-.layout-right{
+.layout-right {
   position: relative;
   display: block;
   float: right;
   width: 900px;
 }
 /* 섹션 레이아웃 */
-.good-wrap{
+.good-wrap {
   position: relative;
   display: block;
 }
-.good-wrap .good-box{
+.good-wrap .good-box {
   float: left;
   margin-right: calc((100% - (290px * 4)) / 3);
 }
-.good-wrap .good-box:last-child{
+.good-wrap .good-box:last-child {
   margin-right: 0;
   float: right;
 }
@@ -294,21 +283,23 @@ margin-bottom: 0;
 
 /*  상단 */
 .header {
-  display: block;
   position: relative;
+  display: block;
+
   z-index: 99999;
-  border-bottom: 1px solid #eee ;
-  background: white;
+  border-bottom: 1px solid #eee;
+  background: #fff;
 }
 .header-top {
-  display: block;
   position: relative;
-  
+  display: block;
+
   padding-top: 30px;
 }
 .header-top-left {
-  display: block;
   position: relative;
+  display: block;
+
   float: left;
   /* inline 엔턴키 공백 제거  */
   font-size: 0;
@@ -424,7 +415,6 @@ a.center-more {
   text-decoration: underline;
   text-underline-position: under;
   text-decoration-thickness: 2px;
-
 }
 
 .header-main {
@@ -437,54 +427,49 @@ a.center-more {
   position: relative;
   float: left;
 }
-.nav{
+.nav {
   display: inline-block;
   position: relative;
   padding-top: 12px;
   margin-right: 45px;
 }
 
-.gnb{
+.gnb {
   display: block;
   position: relative;
-  
 }
-.gnb >li{
+.gnb > li {
   display: block;
   position: relative;
   float: left;
-  
+
   margin-right: 30px;
 }
-.gnb >li:last-child{
+.gnb > li:last-child {
   margin-right: 0;
 }
-.gnb >li >a
-{
+.gnb > li > a {
   display: block;
   position: relative;
   font-weight: 500;
   font-size: 17px;
   color: #000;
   line-height: 19px;
-
- 
 }
-.gnb>li >a:hover{
+.gnb > li > a:hover {
   background: #76bd42;
-
 }
-.ball::after{
-content: "";
-position: absolute;
-right: -7px;
-top: 0px;
-width: 5px;
-height: 5px;
-background: #ff9933;
-border-radius: 50%;
+.ball::after {
+  content: "";
+  position: absolute;
+  right: -7px;
+  top: 0px;
+  width: 5px;
+  height: 5px;
+  background: #ff9933;
+  border-radius: 50%;
 }
-.all-bt{
+.all-bt {
   display: block;
   position: relative;
   font-weight: 500;
@@ -494,16 +479,13 @@ border-radius: 50%;
   border: 0;
   background: transparent;
   line-height: 19px;
-
-
 }
-.all-bt> i{
+.all-bt > i {
   margin-right: 15px;
   display: inline-block;
   /* block 주면 줄내림됨 옆에 아무도못옴  */
-
 }
-.join-bt{
+.join-bt {
   display: block;
 
   font-weight: 500;
@@ -514,24 +496,22 @@ border-radius: 50%;
   background: transparent;
   line-height: 19px;
 }
-.join-bt:hover{
+.join-bt:hover {
   color: #76bd42;
 }
 
-.join-bt-icon{
+.join-bt-icon {
   position: relative;
   display: inline-block;
   width: 12px;
   height: 8px;
-  background: url("../images/icoGnbArr2.png")no-repeat;
+  background: url("../images/icoGnbArr2.png") no-repeat;
   background-position: 0px 0px;
   vertical-align: 2px;
   margin-left: 2px;
-
-
 }
-.join-list, 
-.more-menu-list{
+.join-list,
+.more-menu-list {
   position: absolute;
   left: 50%;
   /* 좌표가 아닌 보이는 영역의 내용을 이동한다 */
@@ -540,19 +520,18 @@ border-radius: 50%;
   display: block;
   padding: 20px;
   background: white;
-  border:  1px solid #ddd;
-  box-shadow:  0px 3px 6px 0px rgb(0 0 0 / 16%);
-  
+  border: 1px solid #ddd;
+  box-shadow: 0px 3px 6px 0px rgb(0 0 0 / 16%);
 }
-.join-list >li,
-.more-menu-list>li{
+.join-list > li,
+.more-menu-list > li {
   position: relative;
   display: block;
   padding: 7px 0;
   text-align: left;
 }
-.join-list>li> a,
-.more-menu-list> li >a{
+.join-list > li > a,
+.more-menu-list > li > a {
   position: relative;
   display: inline-block;
   font-size: 15px;
@@ -560,11 +539,11 @@ border-radius: 50%;
   line-height: 37px;
   white-space: nowrap;
   line-height: 19px;
- 
+
   border-bottom: 2px solid white;
 }
-.join-list >li >a:hover,
-.more-menu-list>li>a:hover{
+.join-list > li > a:hover,
+.more-menu-list > li > a:hover {
   /* text-decoration: underline;
 
   text-underline-position: under;
@@ -573,21 +552,17 @@ border-radius: 50%;
   font-weight: 600;
   color: #000;
 }
-.join-bt:hover .join-bt-icon{
+.join-bt:hover .join-bt-icon {
   background-position: 0px -8px;
 }
-.more-menu
-
-{
+.more-menu {
   display: inline-block;
   position: relative;
- 
-
 }
-.more-menu-bt{
+.more-menu-bt {
   display: inline-block;
   position: relative;
- 
+
   font-size: 13px;
   color: #666;
   cursor: pointer;
@@ -596,7 +571,7 @@ border-radius: 50%;
   line-height: 19px;
   vertical-align: 5px;
 }
-.more-menu-icon{
+.more-menu-icon {
   display: inline-block;
   width: 10px;
   height: 6px;
@@ -605,19 +580,18 @@ border-radius: 50%;
   margin-right: 3px;
   vertical-align: px;
 }
-.more-menu-bt:hover{
+.more-menu-bt:hover {
   color: #76bd42;
 }
-.more-menu-bt:hover> .more-menu-icon{
+.more-menu-bt:hover > .more-menu-icon {
   background-position: 0 -6px;
 }
 .header-main-right {
   display: block;
   position: relative;
   float: right;
-  
 }
-.search-form{
+.search-form {
   display: block;
   position: relative;
   float: left;
@@ -641,8 +615,7 @@ border-radius: 50%;
   color: #000;
 }
 
-
-.search-bt{
+.search-bt {
   position: absolute;
   top: 50%;
   /*좌표는결정했는데 보이는내용물의 높이를 50%만큼 위로 올린다  */
@@ -656,18 +629,18 @@ border-radius: 50%;
   cursor: pointer;
   font-size: 0;
 }
-.bucket{
-   display: block;
+.bucket {
+  display: block;
   position: relative;
-width: 30px;
-height: 30px;
-background: url("../images/btnCart.png");
-font-size: 0;
-float: left;
-margin-top: 6px;
-margin-left: 25px;
+  width: 30px;
+  height: 30px;
+  background: url("../images/btnCart.png");
+  font-size: 0;
+  float: left;
+  margin-top: 6px;
+  margin-left: 25px;
 }
-.bucket-count{
+.bucket-count {
   position: absolute;
   display: block;
   right: -5px;
@@ -689,33 +662,31 @@ margin-left: 25px;
   width: 100%;
   height: 410px;
   overflow: hidden;
-  padding: 0; !important
-  
+  padding: 0 !important;
 }
-.visual-slide{
+.visual-slide {
   display: block;
   position: relative;
   width: 100%;
   height: 100%;
 }
-.visual-slide-page{
+.visual-slide-page {
   position: relative;
   display: block;
   width: 100%;
   height: 100%;
 }
-.visual-slide-page a{
+.visual-slide-page a {
   position: relative;
   display: block;
   width: 100%;
   height: 100%;
   text-align: center;
 }
-.visual-prev, 
-.visual-next
-{
+.visual-prev,
+.visual-next {
   position: absolute;
-  
+
   top: 50%;
   /* 죄표고정 내용물만 옯김 */
   transform: translateY(-50%);
@@ -726,37 +697,33 @@ margin-left: 25px;
   height: 64px;
   border-radius: 50%;
 }
-.visual-prev:hover{
+.visual-prev:hover {
   background: rgb(0, 0, 0, 0.3) url("../images/visualArrP.png") no-repeat;
   background-position: 0 -64px;
-
 }
-.visual-prev{
+.visual-prev {
   left: calc(50% - 600px);
-  background: rgb(0, 0, 0, 0.0) url("../images/visualArrP.png") no-repeat;
- background-position: 0 -64px;
+  background: rgb(0, 0, 0, 0) url("../images/visualArrP.png") no-repeat;
+  background-position: 0 -64px;
 }
 
-.visual-next{
+.visual-next {
   right: calc(50% - 600px);
   background-position: 0 -64px;
-  background: rgb(0, 0, 0, 0.0) url("../images/visualArrN.png") no-repeat;
+  background: rgb(0, 0, 0, 0) url("../images/visualArrN.png") no-repeat;
 }
-.visual-next:hover{
+.visual-next:hover {
   background: rgb(0, 0, 0, 0.3) url("../images/visualArrP.png") no-repeat;
   background-position: 0 -64px;
-
 }
-.visual-control{
+.visual-control {
   position: absolute;
   bottom: 43px;
- 
+
   left: calc(50% - 600px + 80px);
   display: block;
 }
-.visual-play{
-
-
+.visual-play {
   position: relative;
   display: block;
   width: 30px;
@@ -764,9 +731,8 @@ margin-left: 25px;
   background: url("../images/visualPlay.png");
   float: left;
   border: 0;
-  
 }
-.visual-pg{
+.visual-pg {
   display: block;
   position: relative;
   width: 52px;
@@ -778,10 +744,8 @@ margin-left: 25px;
   margin-left: 5px;
   text-align: center;
   color: #fff;
-
-
 }
-.visual-more{
+.visual-more {
   display: block;
   position: relative;
   width: 29px;
@@ -793,8 +757,6 @@ margin-left: 25px;
   float: left;
 }
 
-
-
 /*  오늘의상품 */
 .today {
   display: block;
@@ -805,12 +767,9 @@ margin-left: 25px;
   display: block;
   position: relative;
   background: #edf9f9;
-
 }
-.sale .slide-control{
+.sale .slide-control {
   margin-top: 105px;
-
-
 }
 
 /* 신상품 */
@@ -912,17 +871,16 @@ margin-left: 25px;
   background: #fff8fa;
 }
 
-.recommend .section-title-txt{
+.recommend .section-title-txt {
   font-size: 17px;
   border-bottom: 2px solid #76bd42;
-  
-  display: inline-block;}
-  .recommend .section-title-txt{
 
+  display: inline-block;
 }
-.recommend .slide-control{
+.recommend .section-title-txt {
+}
+.recommend .slide-control {
   margin-top: 20px;
-
 }
 
 /* 인기물품 */
@@ -935,14 +893,13 @@ margin-left: 25px;
   display: block;
   margin-bottom: 40px;
 }
-.popular-more{
-
+.popular-more {
   position: absolute;
-  display: inline-block;
-  width: 114px;
-  height: 34px;
   right: 0;
   bottom: 0;
+  display: inline-block;
+  height: 34px;
+  padding: 0 20px;
   text-align: center;
   line-height: 32px;
   border: 1px solid #bbb;
@@ -950,12 +907,9 @@ margin-left: 25px;
   color: #666;
   font-size: 13px;
   transition: background 0.5s;
-  white-space: nowrap;
-   padding: 0 20px;
 }
-.popular-more:hover{
- background: #f9f9f9;
-
+.popular-more:hover {
+  background: #f9f9f9;
 }
 
 .popular-slide-prev,
@@ -964,14 +918,13 @@ margin-left: 25px;
   display: block;
   width: 80px;
   height: 140px;
- 
+
   background: #fff;
 }
 .popular-slide-prev {
   float: left;
 }
 .popular-slide-prev span {
-  
   position: absolute;
   left: 0;
   top: 50%;
@@ -987,7 +940,6 @@ margin-left: 25px;
   float: right;
 }
 .popular-slide-next span {
- 
   position: absolute;
   right: 0;
   top: 50%;
@@ -1005,114 +957,107 @@ margin-left: 25px;
   width: calc(100% - 80px - 80px);
   height: 140px;
   float: left;
-  
 }
-.popular-slide a{
+.popular-slide a {
   position: relative;
   display: block;
   overflow: hidden;
   width: 140px;
- height: 140px;
- border:  1px solid rgb(0, 0, 0, 0.0);
- overflow: hidden;
-float: left;
-margin-right: 10px;
+  height: 140px;
+  border: 1px solid rgb(0, 0, 0, 0);
+  overflow: hidden;
+  float: left;
+  margin-right: 10px;
 }
 
- .popular-slide a:hover{
+.popular-slide a:hover {
   background: white;
   border: 1px solid #76bd42;
-
- }
- .popular-slide-prev span:hover{
+}
+.popular-slide-prev span:hover {
   background-position: 0 -20px;
- }
- .popular-slide-next span:hover{
+}
+.popular-slide-next span:hover {
   background-position: 0 -20px;
- }
-
- .popular-slide a:hover .popular-cate-icon {
-  background-position: 0 -64px;
-  
 }
 
-.popular-cate-icon{
+.popular-slide a:hover .popular-cate-icon {
+  background-position: 0 -64px;
+}
+
+.popular-cate-icon {
   position: relative;
   display: block;
   width: 65px;
   height: 64px;
   overflow: hidden;
   margin: 20px auto;
-
-
 }
-.popular-cate-name{
+.popular-cate-name {
   position: relative;
   display: block;
-  font-size: 
-  17px;
+  font-size: 17px;
   text-align: center;
   white-space: nowrap;
-
 }
 
 /*  카테고리 아이콘관련 */
-.cate-icon-1{
+.cate-icon-1 {
   background: url("../images/icon_1.png") no-repeat;
   background-position: 0px 0px;
 }
-.cate-icon-2{
+.cate-icon-2 {
   background: url("../images/icon_2.png") no-repeat;
   background-position: 0px 0px;
 }
-.cate-icon-3{
+.cate-icon-3 {
   background: url("../images/icon_3.png") no-repeat;
   background-position: 0px 0px;
 }
-.cate-icon-4{
+.cate-icon-4 {
   background: url("../images/icon_4.png") no-repeat;
   background-position: 0px 0px;
 }
-.cate-icon-5{
+.cate-icon-5 {
   background: url("../images/icon_5.png") no-repeat;
   background-position: 0px 0px;
 }
-.cate-icon-6{
+.cate-icon-6 {
   background: url("../images/icon_6.png") no-repeat;
   background-position: 0px 0px;
 }
-.cate-icon-7{
+.cate-icon-7 {
   background: url("../images/icon_7.png") no-repeat;
   background-position: 0px 0px;
 }
-.cate-icon-8{
+.cate-icon-8 {
   background: url("../images/icon_8.png") no-repeat;
   background-position: 0px 0px;
 }
-.cate-icon-9{
+.cate-icon-9 {
   background: url("../images/icon_9.png") no-repeat;
   background-position: 0px 0px;
 }
-.cate-icon-10{
+.cate-icon-10 {
   background: url("../images/icon_10.png") no-repeat;
   background-position: 0px 0px;
 }
-.cate-icon-11{
+.cate-icon-11 {
   background: url("../images/icon_11.png") no-repeat;
   background-position: 0px 0px;
 }
 
-.cate-icon-12{
+.cate-icon-12 {
   background: url("../images/icon_12.png") no-repeat;
   background-position: 0px 0px;
 }
 
-.cate-icon-13{
+.cate-icon-13 {
   background: url("../images/icon_13.png") no-repeat;
   background-position: 0px 0px;
 }
 
-.cate-icon-14{
+.cate-icon-14 {
   background: url("../images/icon_14.png") no-repeat;
   background-position: 0px 0px;
 }
@@ -1122,34 +1067,31 @@ margin-right: 10px;
   position: relative;
   background: #f3f9f0;
 }
-.brand .slide-control{
+.brand .slide-control {
   margin-top: 25px;
 }
-.brand-slide{
+.brand-slide {
   position: relative;
   display: block;
 }
-.brand-box{
+.brand-box {
   display: block;
   position: relative;
   width: 285px;
   height: 285px;
   background: 30px;
   padding: 35px 30px;
+  background: #fff;
   float: left;
-
-  
 }
 .brand-box a {
   display: block;
   position: relative;
   text-align: center;
-
 }
 .brand-box a img {
   display: inline-block;
   position: relative;
-
 }
 .brand-box a p {
   display: block;
@@ -1170,19 +1112,16 @@ margin-right: 10px;
   float: left;
   border-right: 1px solid #e3e3e3;
 }
-.brand-info > li:last-child{
+.brand-info > li:last-child {
   border-right: 0;
 }
 .brand-info-title {
   display: block;
   position: relative;
-  text-align:center;
+  text-align: center;
   font-size: 16px;
   color: #666;
   margin: 5px 0;
-  
- 
-
 }
 .brand-info-value {
   display: block;
@@ -1195,6 +1134,7 @@ margin-right: 10px;
 .banner {
   position: relative;
   display: block;
+  padding-bottom: 0 !important;
 }
 .banner-slide {
   position: relative;
@@ -1228,7 +1168,7 @@ margin-right: 10px;
 .banner-slide-next {
   right: 20px;
   background: url("../images/banner_arrow.png");
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) translateY(-50%);
 }
 .banner-slide-next:hover {
   background-position: 0px -34px;
@@ -1239,15 +1179,314 @@ margin-right: 10px;
   display: block;
   position: relative;
 }
-
-/*  이용후기 */
-
-.review {
-  display: block;
+.season-wrap {
   position: relative;
+  display: block;
 }
-.review .slide-control{
+.season-left {
+  position: relative;
+  display: block;
+  width: 790px;
+  float: left;
+  height: 420px;
+}
+
+.season-left a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.season-left a > img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /* 좌표는 결정했고 내용물만 옯긴다 */
+  transform: translate(-50%, -50%);
+  display: block;
+}
+
+.season-info {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  /* 인라인 블락일경우 공백이 생긴다 */
+  /* 공백은 엔터키 때문에 생김 */
+  float: left;
+  font-size: 0;
+  letter-spacing: 0;
+}
+.season-info h3 {
+  color: white;
+  font-weight: 700;
+  font-size: 25px;
+  padding: 95px 15px 25px 15px;
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  background: #76bd42;
+  vertical-align: -21px;
+}
+.season-info p {
+  position: relative;
+  display: inline-block;
+
+  width: 490px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 40px 30px;
+}
+.season-info p span {
+  position: relative;
+  display: inline-block;
+
+  margin-bottom: -5px;
+  font-size: 25px;
+  color: #333;
+  white-space: nowrap;
+}
+.season-info p b {
+  position: relative;
+  display: block;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.season-right {
+  position: relative;
+  display: block;
+  width: cal(100% - 790px - 70px);
+  width: 340px;
+  float: right;
+}
+
+.season-list {
+  position: relative;
+  display: block;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+}
+.season-good-list {
+  position: relative;
+  display: block;
+
+  width: 100%;
+  height: 255px;
+
+  overflow: hidden;
+}
+.season-good-list > li {
+  position: relative;
+  display: block;
+}
+.season-good {
+  position: relative;
+  display: block;
+  height: 70px;
+  margin-bottom: 15px;
+}
+.season-label {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: url("../images/inpCheck.png") no-repeat;
+  background-position: 0px 0px;
+  font-size: 0;
+  transform: translateY(-50%);
+}
+
+.season-good-check:checked + .season-label {
+  background-position: 0px -36px;
+}
+.season-good-check {
+  position: absolute;
+  left: -20000000000000px;
+  top: 0px;
+  display: block;
+}
+.season-good-img {
+  position: relative;
+  display: block;
+  width: 70px;
+  height: 70px;
+  margin-left: 40px;
+  overflow: hidden;
+  float: left;
+}
+
+.season-good-img > img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.season-good-info {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  float: left;
+}
+.season-good-title {
+  position: relative;
+  display: block;
+  font-size: 15px;
+}
+.season-good-price {
+  position: relative;
+  display: block;
+  font-size: 13px;
+}
+.season-good-price em {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  font-style: normal;
+}
+
+.season-total {
+  position: relative;
+  display: block;
+}
+.season-good-total {
+  position: relative;
+  display: block;
+  padding-left: 40px;
+  font-size: 20px;
+  color: #000;
+  margin: 30px 0;
+}
+.season-good-total em {
+  font-style: normal;
+}
+.buy-good {
+  position: relative;
+  display: block;
+  border: 1px solid #bbb;
+  text-align: center;
+  color: #000;
+  font-size: 20px;
+  padding: 18px 0;
+}
+.buy-good em {
+  position: relative;
+  display: inline-block;
+  font-style: normal;
+}
+
+/* 이용후기 */
+.review {
+  position: relative;
+  display: block;
+  background: #fcf6f2;
+}
+.review .slide-control {
   margin-top: 25px;
+}
+.review-slide {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 235px;
+}
+.review-box {
+  position: relative;
+  display: block;
+  width: 290px;
+  height: 100%;
+  background: #fff;
+  margin-right: 15px;
+
+  padding: 20px;
+
+  float: left;
+}
+.review-slide .review-box:last-child {
+  margin-right: 0;
+}
+.review-box a {
+  position: relative;
+  display: block;
+}
+.review-box-desc {
+  position: relative;
+  display: block;
+  width: 100%;
+  /* 이미지 높이 기준 */
+  height: 66px;
+  margin-bottom: 15px;
+}
+.review-box-title {
+  position: relative;
+  display: block;
+  font-size: 17px;
+  /*  말줄임 ... 표시 */
+  width: 165px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  margin-bottom: 5px;
+}
+.review-box-star {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 20px;
+  font-size: 17px;
+  font-weight: 500;
+  padding-left: 25px;
+}
+.review-box-star::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background: url("../images/icoRating.png") no-repeat;
+}
+.review-box-img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 66px;
+  height: 66px;
+  overflow: hidden;
+}
+.review-box-img img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.review-box-txt {
+  position: relative;
+  display: block;
+  font-size: 13px;
+  width: 100%;
+  /* 두줄이상 말줄이 표현 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin-bottom: 20px;
+}
+
+.review-box-user {
+  position: relative;
+  display: block;
+  font-size: 13px;
 }
 
 /* 커뮤니티 */
