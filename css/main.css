@@ -125,6 +125,100 @@ body {
   width: 140px;
   display: block;
 }
+
+/* 고정 메뉴 */
+.fix-menu {
+  position: fixed;
+  right: 0;
+  top: 175px;
+  display: block;
+  width: 85px;
+
+  z-index: 999999;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 0 4px 9px 0 rgb(0 0 0 / 10%);
+  padding-top: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 29px;
+
+  overflow: hidden;
+}
+
+.fix-list {
+  position: relative;
+  display: block;
+}
+.fix-list > li {
+  position: relative;
+  display: block;
+  text-align: center;
+  font-size: 13px;
+  white-space: nowrap;
+
+  margin-bottom: 10px;
+}
+.fix-list > li > a {
+  position: relative;
+  display: block;
+}
+.fix-list > li > a::after {
+  content: "";
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 32px;
+  background: url("../images/icoFloating.png") no-repeat;
+}
+
+.fix-list > li span {
+  position: relative;
+  display: block;
+}
+.fix-login::after {
+  background-position: 0px 0px;
+}
+.fix-shop::after {
+  background-position: 0px -32px !important;
+}
+.good-recent {
+  display: inline-block !important;
+  width: 50px !important;
+  height: 50px !important;
+  overflow: hidden;
+}
+.good-recent img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /* 위치는 고정 내용!!! 만 변경 */
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.fix-qa::after {
+  background-position: 0px calc(-32px * 2) !important;
+}
+.fix-talk::after {
+  background-position: 0px calc(-32px * 3) !important;
+}
+.fix-top {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  line-height: 29px;
+  text-align: center;
+  cursor: pointer;
+  border: 0;
+  background: #000;
+  color: #fff;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
 /* 공통요소 */
 
 .clearfix::after {
@@ -1490,15 +1584,412 @@ a.center-more {
 }
 
 /* 커뮤니티 */
-
-.commnity {
-  display: block;
+.community {
   position: relative;
+  display: block;
 }
 
+.community-notice {
+  position: relative;
+  display: block;
+  width: calc(100% / 3);
+  padding: 0 40px;
+  border-right: 1px solid #ddd;
+  float: left;
+}
+
+.community-notice > dl {
+  position: relative;
+  display: block;
+}
+.community-notice > dl > dt {
+  position: relative;
+  display: block;
+
+  padding: 0 10px;
+
+  float: left;
+}
+.community-notice > dl > dt:nth-child(1) {
+  padding-left: 0;
+}
+.community-notice > dl > dt:nth-child(1)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 1px;
+  height: 18px;
+  background: #e5e5e5;
+}
+
+.community-bt {
+  position: relative;
+  display: block;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+  font-size: 20px;
+  color: #999;
+}
+.community-bt-active {
+  color: #000;
+  font-weight: 700;
+}
+
+.community-notice > dl > dd {
+  position: absolute;
+  left: 0;
+  top: 50px;
+  display: none;
+  width: 100%;
+  background: #fff;
+}
+.community-visible-active {
+  display: block !important;
+}
+.notice-list {
+  position: relative;
+  display: block;
+}
+.notice-list > li {
+  position: relative;
+  display: block;
+  line-height: 1;
+  margin-bottom: 15px;
+}
+.notice-list > li > a {
+  position: relative;
+  display: block;
+  font-size: 13px;
+}
+.notice-list > li > a > span {
+  position: relative;
+  display: inline-block;
+  /* 1줄일때 말줄임 ... */
+  width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.notice-list > li > a > em {
+  position: relative;
+  display: inline-block;
+  width: calc(100% - 240px);
+  color: #999;
+  font-style: normal;
+  text-align: right;
+  vertical-align: 2px;
+}
+
+.community-info {
+  position: relative;
+  display: block;
+  width: calc(100% / 3);
+  padding: 0 40px;
+
+  float: left;
+}
+
+.community-info h3 {
+  position: relative;
+  display: block;
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.tel {
+  position: relative;
+  display: block;
+  font-size: 32px;
+  font-weight: 700;
+  color: #76bd42;
+  margin-bottom: 15px;
+}
+
+.community-info-list {
+  position: relative;
+  display: block;
+}
+.community-info-list li {
+  position: relative;
+  display: block;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.t1 {
+  color: #666;
+}
+.t2 {
+  color: #000;
+}
+.t3 {
+  color: #000;
+}
+.community-info-list > li > b {
+  font-weight: 700;
+}
+.community-info-list > li > a {
+  font-weight: 700;
+}
+
+.community-help {
+  position: relative;
+  display: block;
+  width: calc(100% / 3);
+  padding: 0 40px;
+  float: left;
+}
+
+.community-help h3 {
+  position: relative;
+  display: block;
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.community-hlep-list {
+  position: relative;
+  display: block;
+}
+.community-hlep-list > li {
+  position: relative;
+  display: block;
+  width: calc(50% - 5px);
+  margin-bottom: 10px;
+}
+.community-hlep-list > li:nth-child(2n + 1) {
+  float: left;
+}
+.community-hlep-list > li:nth-child(2n) {
+  float: right;
+}
+.community-hlep-list > li > a {
+  position: relative;
+  display: block;
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  padding: 0 12px;
+  line-height: 36px;
+  font-size: 13px;
+  color: #333;
+}
+.community-hlep-list > li > a::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  /* 위치는 고정 내용!!만 이동 */
+  transform: translateY(-50%);
+  display: block;
+  width: 8px;
+  height: 12px;
+  background: url("../images/icoFaq.png") no-repeat;
+}
+
+.community-line::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 1px;
+  height: 190px;
+  background: #ddd;
+}
 /*  하단 */
 
 .footer {
   display: block;
   position: relative;
+}
+.footer-top {
+  display: block;
+  position: relative;
+  border-top: 1px sollid #f2f2f2;
+}
+.footer-menu {
+  position: relative;
+  display: block;
+  float: left;
+  padding: 20px 0px;
+}
+.footer-menu > li {
+  position: relative;
+  display: block;
+  float: left;
+  padding: 0 10px;
+}
+.footer-menu > li > a {
+  position: relative;
+  display: block;
+
+  font-size: 13px;
+}
+
+.footer-menu > li::after {
+  content: "";
+
+  position: absolute;
+  right: 0;
+  right: 0;
+  top: 50%;
+  transform: translatey(-50%);
+  width: 2px;
+  height: 2px;
+  background: #a9b0b8;
+}
+
+.footer-menu > li:first-child {
+  padding-left: 0;
+}
+.footer-menu > li:last-child {
+  padding-right: 0;
+}
+
+.footer-menu > li:last-child::after {
+  content: none;
+}
+.footer-link {
+  position: relative;
+  display: block;
+  float: right;
+  cursor: pointer;
+  border: 0;
+  background: #fff;
+  /* 높이주고 세로 중앙정렬을 한번에 처리 */
+  line-height: 64px;
+  font-size: 13px;
+  color: #666;
+}
+/*  */
+.footer-copy {
+  position: relative;
+  display: block;
+  float: left;
+}
+
+.footer-sns {
+  position: relative;
+  display: block;
+  float: right;
+}
+
+.blank {
+  display: inline-block;
+  width: 30px;
+}
+
+.footer-link:after {
+  content: "";
+  position: relative;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: url("../images/btnMore.png") no-repeat;
+  vertical-align: 0;
+}
+.footer-main {
+  display: block;
+  position: relative;
+  border-top: 1px sollid #f2f2f2;
+  padding: 20px 0;
+}
+
+.footer-copy {
+}
+.copy-list {
+}
+.copy-list > li {
+  display: block;
+  position: relative;
+  font-size: 13px;
+  line-height: 1;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.copy-list > li > span {
+  position: relative;
+  display: inline-block;
+  padding: 0 8px;
+}
+
+.copy-list > li > span:first-child {
+  padding-left: 0;
+}
+.copy-list > li > span:last-child {
+  padding-left: 0;
+}
+
+.copy-list > li > span:last-child::after {
+  content: none;
+}
+
+.copy-list > li > span::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translaty(-50%);
+  display: block;
+  width: 1px;
+  height: 10px;
+  background: #e5e5e5;
+}
+.copy-txt {
+  display: block;
+  position: relative;
+
+  color: #999;
+  font-size: 11px;
+  margin-top: 20px;
+}
+.sns-list {
+  display: block;
+  position: relative;
+}
+.sns-list > li {
+  display: block;
+  position: relative;
+  float: left;
+  padding: 0 5px;
+}
+
+.sns-list > li:first-child {
+  padding-left: 0;
+}
+.sns-list > li:last-child {
+  padding-right: 0;
+}
+.sns-list > li > a {
+  display: block;
+  position: relative;
+  width: 26px;
+  height: 26px;
+  background: url("../images/ftSns.png") no-repeat;
+}
+.is {
+  background-position: 0px -26px !important;
+}
+.fb {
+  background-position: 0px 0px !important;
+}
+.yt {
+  background-position: 0px calc(-26px * 3) !important;
+}
+.nb {
+  background-position: 0px calc(-26px * 2) !important;
+}
+.kk {
+  background-position: 0px calc(-26px * 4) !important;
+}
+
+.sns-list {
 }
