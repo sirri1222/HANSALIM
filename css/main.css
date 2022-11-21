@@ -189,6 +189,14 @@ body {
   height: 50px !important;
   overflow: hidden;
 }
+
+/* 뒷편 아이콘 없애기 */
+
+.good-recent::after{
+  content: none !important;
+}
+
+
 .good-recent img {
   position: absolute;
   left: 50%;
