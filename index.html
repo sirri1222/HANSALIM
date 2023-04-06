@@ -99,51 +99,74 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="css/main.css" />
+    <!-- Anime.js -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+      integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <!-- nicescroll : jQuery 연결되어야 함. -->
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.8.1/smooth-scrollbar.js"
+      integrity="sha512-yn9N2uBs4OocMUaJ9wZK6ELv+qXIULoRa7IvOsGz2wqWQRt8mNqU1L2I9Fau24PPxEKlGxuEDkRKvsanwAWUYw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/script.js"></script>
   </head>
   <body>
-<!-- 고정 메뉴 -->
-<div class="fix-menu">
-  <ul class="fix-list">
-    <li>
-      <a href="#" class="fix-login">
-        <span>로그인</span>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="fix-shop">
-        <span>주문/공급</span>
-      </a>
-    </li>
-    <li>
-      <span>최근 본 물품</span>
-      <a href="#" class="good-recent">
-        <img src="images/best_1.jpg" alt="" />
-      </a>
-    </li>
-    <li>
-      <a href="#" class="fix-qa">
-        <span>상담/문의</span>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="fix-talk">
-        <span>살림톡</span>
-      </a>
-    </li>
-  </ul>
-  <button class="fix-top">top</button>
-</div>
-
+    <!-- 고정 메뉴 -->
+    <div class="fix-menu" id="fix_menu">
+      <ul class="fix-list" id="fix_list">
+        <li>
+          <a href="#" class="fix-login">
+            <span>로그인</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="fix-shop">
+            <span>주문/공급</span>
+          </a>
+        </li>
+        <li>
+          <span>최근 본 물품</span>
+          <a href="#" class="good-recent">
+            <img src="images/best_1.jpg" alt="" />
+          </a>
+        </li>
+        <li>
+          <a href="#" class="fix-qa">
+            <span>상담/문의</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="fix-talk">
+            <span>살림톡</span>
+          </a>
+        </li>
+      </ul>
+      <button class="fix-top">top</button>
+    </div>
     <!-- 기본레이아웃 -->
     <div class="wrap">
-      <!--  상단-->
+      <!-- 상단 -->
       <header class="header">
         <div class="container">
           <div class="header-top clearfix">
             <div class="header-top-left">
               <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="한살림정보"
-              /></a>
+                <img src="images/logo.png" alt="한살림 장보기" />
+              </a>
               <button class="bt-schedule">
                 <img src="images/icoLocation.png" alt="공급일" />
                 공급일
@@ -153,15 +176,17 @@
               <a href="#" class="track">
                 <img src="images/icoDlvr.png" alt="배송조회" />
               </a>
-
               <ul class="member-list clearfix">
-                <li>
-                  <a href="#" class="login">로그인</a>
-                </li>
+                <li><a href="#">로그인</a></li>
                 <li><a href="#">나의한살림</a></li>
                 <li>
-                  <a href="#" class="center-more">조합원센터</a>
-                  <ul class="center-list">
+                  <a
+                    href="http://www.naver.com"
+                    class="center-more"
+                    id="center_more"
+                    >조합원센터</a
+                  >
+                  <ul class="center-list" id="center_list">
                     <li><a href="#">상담/문의</a></li>
                     <li><a href="#">자주묻는질문</a></li>
                     <li><a href="#">이용후기</a></li>
@@ -175,18 +200,347 @@
               </ul>
             </div>
           </div>
-
           <div class="header-main clearfix">
-            <!-- 헤더메인왼쪽 -->
+            <!-- 헤더 메인 왼쪽 -->
             <div class="header-main-left">
               <nav class="nav">
+                <!-- 전체메뉴 레이아웃 -->
+                <div class="all-menu-area">
+                  <button class="all-bt">
+                    <i class="fa-solid fa-bars"></i>
+                    전체물품
+                  </button>
+                  <!-- 전체메뉴 -->
+                  <div class="all-menu">
+                    <div class="all-menu-cate" data-scrollbar>
+                      <ul class="cate-list">
+                        <li>
+                          <a href="#"><span>쌀/잡곡</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>채소/버섯</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>과일/견과</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>축산/축산가공</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>수산/수산가공</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>반찬/양념/가루</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>식사대용/간편식</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>간식/음료/유제품</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>건강/차</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>화장품/오가닉코튼</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>주방/욕실/세정</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>휴지/생활</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>반려동물</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>대용량/어린이집</span></a>
+                        </li>
+                      </ul>
+                      <ul class="theme-list">
+                        <li>
+                          <a href="#"><span class="ball">영유아</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span class="ball">채식</span></a>
+                        </li>
+                      </ul>
+                      <ul class="deli-list">
+                        <li>
+                          <a href="#"><span>택배공급</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>사전예약</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>산지직송</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>매장만공급</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>브랜드관</span></a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="all-menu-cate-wrap">
+                      <ul class="cate-depth2-list">
+                        <li>
+                          <a href="#"><span>멥쌀/찹쌀</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>잡곡/깨</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>콩류</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>혼합곡/보리/유색미</span></a>
+                        </li>
+                      </ul>
+                      <ul class="cate-depth2-list">
+                        <li>
+                          <a href="#"><span>콩나물/숙주</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>잎/줄기채소</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>열매채소</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>뿌리채소</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>버섯류</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>말린나물류</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>손질한채소</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>양념/조미채소</span></a>
+                        </li>
+                      </ul>
+                      <ul class="cate-depth2-list">
+                        <li>
+                          <a href="#"><span>건조/냉동과일</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>견과류</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>과일/과채</span></a>
+                        </li>
+                      </ul>
+                      <ul class="cate-depth2-list">
+                        <li>
+                          <a href="#"><span>유정란</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>한우</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>돼지</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>닭/오리</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>햄/소시지</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>육가공</span></a>
+                        </li>
+                      </ul>
+                      <ul class="cate-depth2-list">
+                        <li>
+                          <a href="#"><span>생선/손질생선</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>멸치/황태/건어</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>패류/오징어/새우</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>미역/다시마/해조</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>김/조미김</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>젓갈/게장</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>말린오징어/어포</span></a>
+                        </li>
+                      </ul>
+                      <ul class="cate-depth2-list">
+                        <li>
+                          <a href="#"><span>두부/어묵/묵</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>김치/밑반찬</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>된장/고추장/간장</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>기름/식초/소금</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>소스/양념/조청</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>곡식가루/혼합가루</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>과채/고춧가루</span></a>
+                        </li>
+                      </ul>
+                      <ul class="cate-depth2-list">
+                        <li>
+                          <a href="#"><span>라면/간편조리면</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>국수/면</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>만두/피자/핫도그</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>씨리얼/생식/선식</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>국/탕/요리</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>죽/간편밥/밥양념</span></a>
+                        </li>
+                      </ul>
+                      <ul class="cate-depth2-list">
+                        <li>
+                          <a href="#"><span>우리밀빵</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>떡/한과</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>과자</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>우유/두유/유제품</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>과즙/발효/전통/음용식초</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>잼/푸딩/빙과</span></a>
+                        </li>
+                      </ul>
+                      <ul class="cate-depth2-list">
+                        <li>
+                          <a href="#"><span>홍삼/녹용/산양삼</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>건강즙/농축액</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>분말/환/절편</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>꿀/화분/로얄젤리</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>건강차</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>일반차</span></a>
+                        </li>
+                      </ul>
+                      <ul class="cate-depth2-list">
+                        <li>
+                          <a href="#"><span>기초화장</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>색조화장품</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>세안제/팩</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>바디/핸드</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>남성화장품</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>유아/썬크림</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>오가닉코튼</span></a>
+                        </li>
+                      </ul>
+                      <ul class="cate-depth2-list">
+                        <li>
+                          <a href="#"><span>주방세제/세정</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>세제/세탁비누</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>샴푸/린스/헤어용품</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>세안비누/온몸세정</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>치약/칫솔</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>주방소품</span></a>
+                        </li>
+                      </ul>
+                      <ul class="cate-depth2-list">
+                        <li>
+                          <a href="#"><span>휴지/티슈</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>도서</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>생리대/위생용품</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>숯/원예</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>생활소품</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>선물포장</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>기금</span></a>
+                        </li>
+                      </ul>
+                      <ul class="cate-depth2-list">
+                        <li>
+                          <a href="#"><span>사료/간식</span></a>
+                        </li>
+                      </ul>
+                      <ul class="cate-depth2-list">
+                        <li>
+                          <a href="#"><span>대용량/어린이집</span></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
                 <ul class="gnb clearfix">
-                  <li>
-                    <button class="all-bt">
-                      <i class="fa-solid fa-bars"></i>
-                      전체물품
-                    </button>
-                  </li>
                   <li><a href="#">추천</a></li>
                   <li><a href="#">알뜰</a></li>
                   <li><a href="#">새물품</a></li>
@@ -194,10 +548,10 @@
                   <li><a href="#" class="ball">영유아</a></li>
                   <li><a href="#" class="ball">채식</a></li>
                   <li>
-                    <button class="join-bt">
-                      참여 <i class="join-bt-icon"></i>
+                    <button class="join-bt" id="join_bt">
+                      참여<i class="join-bt-icon"></i>
                     </button>
-                    <ul class="join-list">
+                    <ul class="join-list" id="join_list">
                       <li><a href="#">신규물품제안</a></li>
                       <li><a href="#">모임과행사</a></li>
                       <li><a href="#">참여이벤트</a></li>
@@ -206,10 +560,10 @@
                 </ul>
               </nav>
               <div class="more-menu">
-                <button class="more-menu-bt">
+                <button class="more-menu-bt" id="menu_bt">
                   더보기<i class="more-menu-icon"></i>
                 </button>
-                <ul class="more-menu-list">
+                <ul class="more-menu-list" id="menu_list">
                   <li><a href="#">한살림이야기</a></li>
                   <li><a href="#">생산자와 물품</a></li>
                   <li><a href="#">세상의 밥</a></li>
@@ -217,8 +571,8 @@
                 </ul>
               </div>
             </div>
-            <!-- //헤더메인왼쪽 -->
-            <!--헤더메인 오른쪽  -->
+            <!--// 헤더 메인 왼쪽 -->
+            <!-- 헤더 메인 오른쪽 -->
             <div class="header-main-right clearfix">
               <form action="" method="get" class="search-form">
                 <input
@@ -228,22 +582,21 @@
                 />
                 <input type="submit" class="search-bt" />
               </form>
-
               <a href="#" class="bucket">
                 <span class="bucket-count">0</span>
               </a>
             </div>
-            <!--//헤더 메인 오른쪽  -->
+            <!--// 헤더 메인 오른쪽 -->
           </div>
         </div>
       </header>
-      <!--비주얼  -->
+      <!-- 비주얼 -->
       <section class="visual">
         <div class="visual-slide">
-          <div class="visual-slide-page">
-            <a href="#">
-              <img src="images/swiper_img_01.jpg" alt="제품1" />
-            </a>
+          <!-- 비주얼 슬라이드 -->
+          <!-- 비주얼 슬라이드 -->
+          <div class="swiper sw-visual">
+            <div class="swiper-wrapper" id="data-visual"></div>
           </div>
         </div>
         <!-- 좌우 슬라이드 이동 버튼 -->
@@ -256,485 +609,117 @@
           <button class="visual-more"></button>
         </div>
       </section>
-
-     <!-- 오늘의 상품 -->
-     <section class="today">
-      <div class="container">
-        <h2 class="section-title"><b>이 물품은 어떠세요?</b></h2>
-        <div class="good-wrap clearfix ">
-          <div class="good-box">
-            <!-- 제품이미지 -->
-            <a href="#" class="good-img">
-              <img src="images/good.jpg" alt="제품" />
-              <span class="good-type">인기</span>
-            </a>
-            <!-- 제품정보 -->
-            <a href="#" class="good-info">
-              <em>깐양파</em>(<em>2-3개입</em>)
-            </a>
-            <!-- 제품가격 -->
-            <a href="#" class="good-info-price">5,000<em>원</em></a>
-            <!-- 장바구니 -->
-            <button class="good-add-cart"></button>
-          </div>
-          <div class="good-box">
-            <!-- 제품이미지 -->
-            <a href="#" class="good-img">
-              <img src="images/good.jpg" alt="제품" />
-              <span class="good-type">인기</span>
-            </a>
-            <!-- 제품정보 -->
-            <a href="#" class="good-info">
-              <em>깐양파</em>(<em>2-3개입</em>)
-            </a>
-            <!-- 제품가격 -->
-            <a href="#" class="good-info-price">5,000<em>원</em></a>
-            <!-- 장바구니 -->
-            <button class="good-add-cart"></button>
-          </div>
-          <div class="good-box">
-            <!-- 제품이미지 -->
-            <a href="#" class="good-img">
-              <img src="images/good.jpg" alt="제품" />
-              <span class="good-type">인기</span>
-            </a>
-            <!-- 제품정보 -->
-            <a href="#" class="good-info">
-              <em>깐양파</em>(<em>2-3개입</em>)
-            </a>
-            <!-- 제품가격 -->
-            <a href="#" class="good-info-price">5,000<em>원</em></a>
-            <!-- 장바구니 -->
-            <button class="good-add-cart"></button>
-          </div>
-          <div class="good-box">
-            <!-- 제품이미지 -->
-            <a href="#" class="good-img">
-              <img src="images/good.jpg" alt="제품" />
-              <span class="good-type">인기</span>
-            </a>
-            <!-- 제품정보 -->
-            <a href="#" class="good-info">
-              <em>깐양파</em>(<em>2-3개입</em>)
-            </a>
-            <!-- 제품가격 -->
-            <a href="#" class="good-info-price">5,000<em>원</em></a>
-            <!-- 장바구니 -->
-            <button class="good-add-cart"></button>
-          </div>
-        </div>
-        <div class="good-wrap clearfix no-mb">
-          <div class="good-box">
-            <!-- 제품이미지 -->
-            <a href="#" class="good-img">
-              <img src="images/good.jpg" alt="제품" />
-              <span class="good-type">인기</span>
-            </a>
-            <!-- 제품정보 -->
-            <a href="#" class="good-info">
-              <em>깐양파</em>(<em>2-3개입</em>)
-            </a>
-            <!-- 제품가격 -->
-            <a href="#" class="good-info-price">5,000<em>원</em></a>
-            <!-- 장바구니 -->
-            <button class="good-add-cart"></button>
-          </div>
-          <div class="good-box">
-            <!-- 제품이미지 -->
-            <a href="#" class="good-img">
-              <img src="images/good.jpg" alt="제품" />
-              <span class="good-type">인기</span>
-            </a>
-            <!-- 제품정보 -->
-            <a href="#" class="good-info">
-              <em>깐양파</em>(<em>2-3개입</em>)
-            </a>
-            <!-- 제품가격 -->
-            <a href="#" class="good-info-price">5,000<em>원</em></a>
-            <!-- 장바구니 -->
-            <button class="good-add-cart"></button>
-          </div>
-          <div class="good-box">
-            <!-- 제품이미지 -->
-            <a href="#" class="good-img">
-              <img src="images/good.jpg" alt="제품" />
-              <span class="good-type">인기</span>
-            </a>
-            <!-- 제품정보 -->
-            <a href="#" class="good-info">
-              <em>깐양파</em>(<em>2-3개입</em>)
-            </a>
-            <!-- 제품가격 -->
-            <a href="#" class="good-info-price">5,000<em>원</em></a>
-            <!-- 장바구니 -->
-            <button class="good-add-cart"></button>
-          </div>
-          <div class="good-box">
-            <!-- 제품이미지 -->
-            <a href="#" class="good-img">
-              <img src="images/good.jpg" alt="제품" />
-              <span class="good-type">인기</span>
-            </a>
-            <!-- 제품정보 -->
-            <a href="#" class="good-info">
-              <em>깐양파</em>(<em>2-3개입</em>)
-            </a>
-            <!-- 제품가격 -->
-            <a href="#" class="good-info-price">5,000<em>원</em></a>
-            <!-- 장바구니 -->
-            <button class="good-add-cart"></button>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- 알뜰 상품  -->
-      <section class="sale">
+      <!-- 오늘의 상품 -->
+      <section class="today">
         <div class="container">
-
-          <div class="layout-wrap clearfix">
-          <div class="layout-left">
-            <h2 class="section-title section-bar">
-              놓치기 아쉬운<br/>
-              <b>알뜰물품</b>
-            </h2>
-            <p class=" section-title-txt">
-         가격인하 물품을<br>
-              지금 바로 이용해 보세요</p>
-              <a href="#" class="section-bt">더보기</a>
-              <div class="slide-control">
-             
-                <div class="slide-pg">1/4</div>
-                <button class="slide-prev">이전</button>
-                <button class="slide-next">다음</button>
-              </div>
-
+          <h2 class="section-title"><b>이 물품은 어떠세요?</b></h2>
+          <div class="good-wrap" id="data-today">
+            <!-- 외부 오늘상품 데이터 연동 -->
           </div>
-          <div class="layout-right">
-            
-            <!-- 알뜰상품 슬라이드 -->
-            <div class="good-slide clearfix">
-              <div class="good-box clearfix">
-                <!-- 제품이미지 -->
-                <a href="#" class="good-img">
-                  <img src="images/good.jpg" alt="제품" />
-                  <span class="good-type">인기</span>
-                </a>
-                <!-- 제품정보 -->
-                <a href="#" class="good-info">
-                  <em>깐양파</em>(<em>2-3개입</em>)
-                </a>
-                <!-- 제품가격 -->
-                <a href="#" class="good-info-price">5,000<em>원</em></a>
-                <!-- 장바구니 -->
-                <button class="good-add-cart"></button>
-              </div>
-              <div class="good-box">
-                <!-- 제품이미지 -->
-                <a href="#" class="good-img">
-                  <img src="images/good.jpg" alt="제품" />
-                  <span class="good-type">인기</span>
-                </a>
-                <!-- 제품정보 -->
-                <a href="#" class="good-info">
-                  <em>깐양파</em>(<em>2-3개입</em>)
-                </a>
-                <!-- 제품가격 -->
-                <a href="#" class="good-info-price">5,000<em>원</em></a>
-                <!-- 장바구니 -->
-                <button class="good-add-cart"></button>
-              </div>
-              <div class="good-box">
-                <!-- 제품이미지 -->
-                <a href="#" class="good-img">
-                  <img src="images/good.jpg" alt="제품" />
-                  <span class="good-type">인기</span>
-                </a>
-                <!-- 제품정보 -->
-                <a href="#" class="good-info">
-                  <em>깐양파</em>(<em>2-3개입</em>)
-                </a>
-                <!-- 제품가격 -->
-                <a href="#" class="good-info-price">5,000<em>원</em></a>
-                <!-- 장바구니 -->
-                <button class="good-add-cart"></button>
-              </div>
-
-            </div>
-
+          <div class="good-wrap no-mb" id="data-today2">
+            <!-- 외부 오늘상품 데이터 연동 -->
           </div>
-
-          </div>
-        
         </div>
       </section>
-   <!-- 신상품 -->
-   <section class="new">
-    <div class="container">
-      <h2 class="section-title">
-        반가운 <br />
-        <b>새물품</b>
-        <a href="#" class="section-bt">더보기</a>
-      </h2>
-      <!-- 새물품 내용 -->
-      <div class="new-wrap clearfix">
-        <div class="new-left">
-          <a href="#" class="new-img">
-            <img src="images/new_1.jpg" alt="제품1" />
-          </a>
-          <a href="#" class="new-title"
-            >조리가 간편하고 부드러운 맛을 내는 '장국된장'</a
-          >
-          <a href="#" class="new-txt"
-            >콩 입자가 작고 부드러워 빠르고 간편한 조리</a
-          >
-        </div>
-        <div class="new-right clearfix">
-          <div class="new-box">
-            <a href="#" class="new-box-img">
-              <img src="images/new_2.jpg" alt="제품" />
-            </a>
-            <a href="#" class="new-box-title">
-              직접 관리하는 목장에서 집유한 '범산목장유기농우유'
-            </a>
-          </div>
-          <div class="new-box">
-            <a href="#" class="new-box-img">
-              <img src="images/new_2.jpg" alt="제품" />
-            </a>
-            <a href="#" class="new-box-title">
-              직접 관리하는 목장에서 집유한 '범산목장유기농우유'
-            </a>
-          </div>
-          <div class="new-box">
-            <a href="#" class="new-box-img">
-              <img src="images/new_2.jpg" alt="제품" />
-            </a>
-            <a href="#" class="new-box-title">
-              직접 관리하는 목장에서 집유한 '범산목장유기농우유'
-            </a>
-          </div>
-          <div class="new-box">
-            <a href="#" class="new-box-img">
-              <img src="images/new_2.jpg" alt="제품" />
-            </a>
-            <a href="#" class="new-box-title">
-              직접 관리하는 목장에서 집유한 '범산목장유기농우유'
-            </a>
-          </div>
-        </div>
-      </div>
-      <!--// 새물품 내용 -->
-    </div>
-  </section>
-      <!--추천 물품  -->
-      <section class="recommend">
-       
-          <div class="container">
-
-            <div class="layout-wrap clearfix">
+      <!-- 알뜰 상품  -->
+      <section class="sale">
+        <div class="container">
+          <div class="layout-wrap clearfix">
             <div class="layout-left">
               <h2 class="section-title section-bar">
-                <b class="blue">조합원</b>님을 위한<br /><b>추천물품</b>
+                놓치기 아쉬운 <br />
+                <b>알뜰물품</b>
               </h2>
-              <p class="section-title-txt">찬바람 불 때 뜨끈한 국수 한 그릇</p>
+              <p class="section-title-txt">
+                가격인하 물품을 <br />
+                지금 바로 이용해 보세요
+              </p>
+              <a href="#" class="section-bt">더보기</a>
               <div class="slide-control">
-                <div class="slide-pg">1/4</div>
+                <div class="slide-pg"></div>
                 <button class="slide-prev">이전</button>
                 <button class="slide-next">다음</button>
               </div>
             </div>
             <div class="layout-right">
-              <div class="good-slide clearfix">
-                <div class="good-box clearfix">
-                  <!-- 제품이미지 -->
-                  <a href="#" class="good-img">
-                    <img src="images/good.jpg" alt="제품" />
-                    <span class="good-type">인기</span>
-                  </a>
-                  <!-- 제품정보 -->
-                  <a href="#" class="good-info">
-                    <em>깐양파</em>(<em>2-3개입</em>)
-                  </a>
-                  <!-- 제품가격 -->
-                  <a href="#" class="good-info-price">5,000<em>원</em></a>
-                  <!-- 장바구니 -->
-                  <button class="good-add-cart"></button>
-                </div>
-                <div class="good-box">
-                  <!-- 제품이미지 -->
-                  <a href="#" class="good-img">
-                    <img src="images/good.jpg" alt="제품" />
-                    <span class="good-type">인기</span>
-                  </a>
-                  <!-- 제품정보 -->
-                  <a href="#" class="good-info">
-                    <em>깐양파</em>(<em>2-3개입</em>)
-                  </a>
-                  <!-- 제품가격 -->
-                  <a href="#" class="good-info-price">5,000<em>원</em></a>
-                  <!-- 장바구니 -->
-                  <button class="good-add-cart"></button>
-                </div>
-                <div class="good-box">
-                  <!-- 제품이미지 -->
-                  <a href="#" class="good-img">
-                    <img src="images/good.jpg" alt="제품" />
-                    <span class="good-type">인기</span>
-                  </a>
-                  <!-- 제품정보 -->
-                  <a href="#" class="good-info">
-                    <em>깐양파</em>(<em>2-3개입</em>)
-                  </a>
-                  <!-- 제품가격 -->
-                  <a href="#" class="good-info-price">5,000<em>원</em></a>
-                  <!-- 장바구니 -->
-                  <button class="good-add-cart"></button>
-                </div>
-  
+              <!-- 알뜰상품 슬라이드 -->
+              <div class="good-slide" id="data-sale">
+                <!-- 외부 데이터 연동 -->
               </div>
-  
-  
+              <!--// 알뜰상품 슬라이드  -->
+              <!-- Swiper -->
             </div>
-  
-            </div>
-        
-       
+          </div>
         </div>
       </section>
-   <!-- 인기물품 -->
-   <section class="popular">
-    <div class="container">
-      <h2 class="section-title">
-        지금 가장 많이 이용하는 <b>인기물품</b>
-      <a href="#" class="popular-more">반려동물 물품 더보기</a>
-    </h2>
-      <div class="popular-cate clearfix">  
-      
-        
-        
-        <div class="popular-slide-prev">
-          <span>이전</span>
+      <!-- 신상품 -->
+      <section class="new">
+        <div class="container">
+          <h2 class="section-title">
+            반가운 <br />
+            <b>새물품</b>
+            <a href="#" class="section-bt">더보기</a>
+          </h2>
+          <!-- 새물품 내용 -->
+          <div class="new-wrap clearfix">
+            <div class="new-left" id="data-new">
+              <!-- 외부 데이터 출력 -->
+            </div>
+            <div class="new-right clearfix" id="data-new-list"></div>
+          </div>
+          <!--// 새물품 내용 -->
         </div>
-        <div class="popular-slide clearfix">
-          <a href="#"> <span class="popular-cate-icon cate-icon-1"></span>
-            <span class="popular-cate-name">식사대용/간편식</span>
-          </a>
-          <a href="#"> <span class="popular-cate-icon cate-icon-2"></span>
-            <span class="popular-cate-name">식사대용/간편식</span>
-          </a>
-          <a href="#"> <span class="popular-cate-icon cate-icon-3"></span>
-            <span class="popular-cate-name">식사대용/간편식</span>
-          </a>
-          <a href="#"> <span class="popular-cate-icon cate-icon-4"></span>
-            <span class="popular-cate-name">식사대용/간편식</span>
-          </a>
-          <a href="#"> <span class="popular-cate-icon cate-icon-5"></span>
-            <span class="popular-cate-name">식사대용/간편식</span>
-          </a>
-          <a href="#"> <span class="popular-cate-icon cate-icon-6"></span>
-            <span class="popular-cate-name">식사대용/간편식</span>
-          </a>
-          <a href="#"> <span class="popular-cate-icon cate-icon-7"></span>
-            <span class="popular-cate-name">식사대용/간편식</span>
-          </a>
-          <a href="#"> <span class="popular-cate-icon cate-icon-8"></span>
-            <span class="popular-cate-name">식사대용/간편식</span>
-          </a>
-         <a href="#"> <span class="popular-cate-icon cate-icon-9"></span>
-            <span class="popular-cate-name">식사대용/간편식</span>
-          </a>
-          <a href="#"> <span class="popular-cate-icon cate-icon-10"></span>
-            <span class="popular-cate-name">식사대용/간편식</span>
-          </a>  <a href="#"> <span class="popular-cate-icon cate-icon-11"></span>
-            <span class="popular-cate-name">식사대용/간편식</span>
-          </a>
-        </a>  <a href="#"> <span class="popular-cate-icon cate-icon-12"></span>
-          <span class="popular-cate-name">식사대용/간편식</span>
-        </a>
-       
-      </a>  <a href="#"> <span class="popular-cate-icon cate-icon-13"></span>
-        <span class="popular-cate-name">식사대용/간편식</span>
-      </a>
-     
-    </a>  <a href="#"> <span class="popular-cate-icon cate-icon-14"></span>
-      <span class="popular-cate-name">식사대용/간편식</span>
-    </a>
-   
-
-
+      </section>
+      <!-- 추천물품 -->
+      <section class="recommend">
+        <div class="container">
+          <div class="layout-wrap clearfix">
+            <div class="layout-left">
+              <h2 class="section-title section-bar">
+                <b class="blue">조합원</b>님을 위한 <br />
+                <b>추천물품</b>
+              </h2>
+              <p class="section-title-txt">찬바람 불 때 뜨끈한 국수 한 그릇</p>
+              <div class="slide-control">
+                <div class="slide-pg"></div>
+                <button class="slide-prev"></button>
+                <button class="slide-next"></button>
+              </div>
+            </div>
+            <div class="layout-right">
+              <!-- 추천상품 슬라이드 -->
+              <div class="good-slide clearfix" id="data-recommend">
+                <!-- Swiper -->
+              </div>
+              <!--// 추천상품 슬라이드  -->
+            </div>
+          </div>
         </div>
-
-
-        
-        <div class="popular-slide-next"><span>다음</span></div>
-      </div>
-      <!-- 인기물품 목록 -->
-      <div class="good-wrap clearfix no-mb">
-        <div class="good-box">
-          <!-- 제품이미지 -->
-          <a href="#" class="good-img">
-            <img src="images/good.jpg" alt="제품" />
-            <span class="good-type">인기</span>
-          </a>
-          <!-- 제품정보 -->
-          <a href="#" class="good-info">
-            <em>깐양파</em>(<em>2-3개입</em>)
-          </a>
-          <!-- 제품가격 -->
-          <a href="#" class="good-info-price">5,000<em>원</em></a>
-          <!-- 장바구니 -->
-          <button class="good-add-cart"></button>
+      </section>
+      <!-- 인기물품 -->
+      <section class="popular">
+        <div class="container">
+          <h2 class="section-title">
+            지금 가장 많이 이용하는 <b>인기물품</b>
+            <a href="#" class="popular-more">반려동물 물품 더보기</a>
+          </h2>
+          <div class="popular-cate clearfix">
+            <div class="popular-slide-prev">
+              <span>이전</span>
+            </div>
+            <div class="popular-slide" id="data-popular-icon"></div>
+            <div class="popular-slide-next">
+              <span>다음</span>
+            </div>
+          </div>
+          <!-- 인기물품 목록 -->
+          <div class="good-wrap no-mb" id="data-popular">
+            <!-- 외부 데이터 출력 -->
+          </div>
+          <!--// 인기물품 목록 -->
         </div>
-        <div class="good-box">
-          <!-- 제품이미지 -->
-          <a href="#" class="good-img">
-            <img src="images/good.jpg" alt="제품" />
-            <span class="good-type">인기</span>
-          </a>
-          <!-- 제품정보 -->
-          <a href="#" class="good-info">
-            <em>깐양파</em>(<em>2-3개입</em>)
-          </a>
-          <!-- 제품가격 -->
-          <a href="#" class="good-info-price">5,000<em>원</em></a>
-          <!-- 장바구니 -->
-          <button class="good-add-cart"></button>
-        </div>
-        <div class="good-box">
-          <!-- 제품이미지 -->
-          <a href="#" class="good-img">
-            <img src="images/good.jpg" alt="제품" />
-            <span class="good-type">인기</span>
-          </a>
-          <!-- 제품정보 -->
-          <a href="#" class="good-info">
-            <em>깐양파</em>(<em>2-3개입</em>)
-          </a>
-          <!-- 제품가격 -->
-          <a href="#" class="good-info-price">5,000<em>원</em></a>
-          <!-- 장바구니 -->
-          <button class="good-add-cart"></button>
-        </div>
-        <div class="good-box">
-          <!-- 제품이미지 -->
-          <a href="#" class="good-img">
-            <img src="images/good.jpg" alt="제품" />
-            <span class="good-type">인기</span>
-          </a>
-          <!-- 제품정보 -->
-          <a href="#" class="good-info">
-            <em>깐양파</em>(<em>2-3개입</em>)
-          </a>
-          <!-- 제품가격 -->
-          <a href="#" class="good-info-price">5,000<em>원</em></a>
-          <!-- 장바구니 -->
-          <button class="good-add-cart"></button>
-        </div>
-      </div>
-      <!--// 인기물품 목록 -->
-    </div>
-  </section>
-      <!--  브랜드관-->
+      </section>
+      <!-- 브랜드관 -->
       <section class="brand">
         <div class="container">
           <div class="layout-wrap clearfix">
@@ -743,148 +728,34 @@
                 한살림 가치를 담은 <br />
                 <b>브랜드관</b>
               </h2>
-              <p class=" section-title-txt">생활 속 작은 실천!<br>
-                뜻깊은 물품소비에 참여해보세요.</p>
-                <a href="#" class="section-bt">더보기</a>
-                <div class="slide-control">
-               
-                  <div class="slide-pg">1/4</div>
-                     <button class="slide-prev">이전</button>
-                  <button class="slide-next">다음</button>
-                 
-          
-                </div>
-            </div>
-              
-           
-            <!-- 브랜드 슬라이드 -->
-            <div class="layout-right">
-              <!-- 브랜드 슬라이드 -->
-              <div class="brand-slide clearfix">
-                <div class="brand-box">
-                  <a href="#">
-                    <img src="images/brand_1.png" alt= '브랜드'/>
-                    <p>병재사용</p>
-                    <ul class="brand-info clearfix">
-                      <li>
-                        <span class="brand-info-title">온실가스</span>
-                        <span class="brand-info-value">105.1톤 ↓</span>
-                      </li>
-                      <li>
-                        <span class="brand-info-title">소나무</span>
-                        <span class="brand-info-value">8,866그루 ↑</span>
-                      </li>
-                    </ul>
-                  </a>
-                </div>
-                <div class="brand-box">
-                  <a href="#">
-                    <img src="images/brand_1.png" alt= '브랜드'/>
-                    <p>병재사용</p>
-                    <ul class="brand-info clearfix">
-                      <li>
-                        <span class="brand-info-title">온실가스</span>
-                        <span class="brand-info-value">105.1톤 ↓</span>
-                      </li>
-                      <li>
-                        <span class="brand-info-title">소나무</span>
-                        <span class="brand-info-value">8,866그루 ↑</span>
-                      </li>
-                    </ul>
-                  </a>
-                </div>
-                <div class="brand-box">
-                  <a href="#">
-                    <img src="images/brand_1.png" alt= '브랜드'/>
-                    <p>병재사용</p>
-                    <ul class="brand-info clearfix">
-                      <li>
-                        <span class="brand-info-title">온실가스</span>
-                        <span class="brand-info-value">105.1톤 ↓</span>
-                      </li>
-                      <li>
-                        <span class="brand-info-title">소나무</span>
-                        <span class="brand-info-value">8,866그루 ↑</span>
-                      </li>
-                    </ul>
-                  </a>
-                </div>
-                <div class="brand-box">
-                  <a href="#">
-                    <img src="images/brand_1.png" alt= '브랜드'/>
-                    <p>병재사용</p>
-                    <ul class="brand-info clearfix">
-                      <li>
-                        <span class="brand-info-title">온실가스</span>
-                        <span class="brand-info-value">105.1톤 ↓</span>
-                      </li>
-                      <li>
-                        <span class="brand-info-title">소나무</span>
-                        <span class="brand-info-value">8,866그루 ↑</span>
-                      </li>
-                    </ul>
-                  </a>
-                </div>
-                <div class="brand-box">
-                  <a href="#">
-                    <img src="images/brand_1.png" alt= '브랜드'/>
-                    <p>병재사용</p>
-                    <ul class="brand-info clearfix">
-                      <li>
-                        <span class="brand-info-title">온실가스</span>
-                        <span class="brand-info-value">105.1톤 ↓</span>
-                      </li>
-                      <li>
-                        <span class="brand-info-title">소나무</span>
-                        <span class="brand-info-value">8,866그루 ↑</span>
-                      </li>
-                    </ul>
-                  </a>
-                </div>
-                <div class="brand-box">
-                  <a href="#">
-                    <img src="images/brand_1.png" alt= '브랜드'/>
-                    <p>병재사용</p>
-                    <ul class="brand-info clearfix">
-                      <li>
-                        <span class="brand-info-title">온실가스</span>
-                        <span class="brand-info-value">105.1톤 ↓</span>
-                      </li>
-                      <li>
-                        <span class="brand-info-title">소나무</span>
-                        <span class="brand-info-value">8,866그루 ↑</span>
-                      </li>
-                    </ul>
-                  </a>
-                </div>
+
+              <p class="section-title-txt">
+                생활 속 작은 실천! <br />
+                뜻깊은 물품소비에 참여해보세요.
+              </p>
+              <a href="#" class="section-bt">더보기</a>
+              <div class="slide-control">
+                <div class="slide-pg">1/4</div>
+                <button class="slide-prev">이전</button>
+                <button class="slide-next">다음</button>
               </div>
             </div>
-              <!--// 브랜드 슬라이드 -->
+            <div class="layout-right">
+              <div class="brand-slide" id="data-brand">
+                <!-- 외부 데이터 출력 -->
+              </div>
             </div>
-  
-            </div>
-         
+          </div>
+        </div>
       </section>
       <!-- 배너 -->
-      <section class="banner"><div class="container">
-        <div class="banner-slide clearfix">
-          <a href="#">
-            <img src="images/banner_1.jpg" alt="배너">
-          </a>
-          <a href="#">
-            <img src="images/banner_2.jpg" alt="배너">
-          </a>
-          <a href="#">
-            <img src="images/banner_3.jpg" alt="배너">
-          </a>
-          <a href="#">
-            <img src="images/banner_4.jpg" alt="배너">
-          </a>
-         
+      <section class="banner">
+        <div class="container">
+          <div class="banner-slide" id="data-banner"></div>
+          <button class="banner-slide-prev"></button>
+          <button class="banner-slide-next"></button>
         </div>
-        <button class="banner-slide-prev"></button>
-        <button class="banner-slide-next"></button>
-      </div></section>
+      </section>
       <!-- 제철요리 -->
       <section class="season">
         <div class="container">
@@ -892,9 +763,8 @@
           <div class="season-wrap clearfix">
             <div class="season-left">
               <a href="#">
-                <img src="images/cook_main.jpg" alt="요리">
+                <img src="images/cook_main.jpg" alt="요리" />
                 <div class="season-info">
-                  <!-- 정보 -->
                   <h3>요리방법</h3>
                   <p>
                     <span>바삭하고 고소한 건강 주전부리</span>
@@ -905,99 +775,8 @@
             </div>
             <div class="season-right">
               <div class="season-list">
-                <ul class="season-good-list">
-                  <li>
-                    <div class="season-good clearfix">
-                      <input
-                        type="checkbox"
-                        id="ch2"
-                        class="season-good-check"
-                        checked
-                      />
-                      <label for="ch2" class="season-label"> 라벨 </label>
-
-                      <a href="#" class="season-good-img">
-                        <img src="images/cook_1.jpg" alt="요리" />
-                      </a>
-                      <p class="season-good-info">
-                        <a href="#" class="season-good-title"
-                          >달지않은곡물플레이크(300g)</a
-                        >
-                        <a href="#" class="season-good-price"
-                          ><em>5,400</em>원</a
-                        >
-                      </p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="season-good clearfix">
-                      <input
-                        type="checkbox"
-                        id="ch2"
-                        class="season-good-check"
-                        checked
-                      />
-                      <label for="ch2" class="season-label"> 라벨 </label>
-
-                      <a href="#" class="season-good-img">
-                        <img src="images/cook_1.jpg" alt="요리" />
-                      </a>
-                      <p class="season-good-info">
-                        <a href="#" class="season-good-title"
-                          >달지않은곡물플레이크(300g)</a
-                        >
-                        <a href="#" class="season-good-price"
-                          ><em>5,400</em>원</a
-                        >
-                      </p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="season-good clearfix">
-                      <input
-                        type="checkbox"
-                        id="ch3"
-                        class="season-good-check"
-                        checked
-                      />
-                      <label for="ch3" class="season-label"> 라벨 </label>
-
-                      <a href="#" class="season-good-img">
-                        <img src="images/cook_1.jpg" alt="요리" />
-                      </a>
-                      <p class="season-good-info">
-                        <a href="#" class="season-good-title"
-                          >달지않은곡물플레이크(300g)</a
-                        >
-                        <a href="#" class="season-good-price"
-                          ><em>5,400</em>원</a
-                        >
-                      </p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="season-good clearfix">
-                      <input
-                        type="checkbox"
-                        id="ch4"
-                        class="season-good-check"
-                        checked
-                      />
-                      <label for="ch4" class="season-label"> 라벨 </label>
-
-                      <a href="#" class="season-good-img">
-                        <img src="images/cook_1.jpg" alt="요리" />
-                      </a>
-                      <p class="season-good-info">
-                        <a href="#" class="season-good-title"
-                          >달지않은곡물플레이크(300g)</a
-                        >
-                        <a href="#" class="season-good-price"
-                          ><em>5,400</em>원</a
-                        >
-                      </p>
-                    </div>
-                  </li>
+                <ul class="season-good-list" id="data-season" data-scrollbar>
+                  <!-- 외부 데이터 출력 -->
                 </ul>
               </div>
               <div class="season-total">
@@ -1010,13 +789,12 @@
                   />
                   <label for="chall" class="season-label"> 라벨 </label>
 
-
-              전체선택 <em>3</em>개
-            </div>
-            <a href="#"  class="buy-good">
-              총 <em>50,000</em>원 장바구니 담기
-            </a>
-          </div>
+                  전체 선택 <em id="buy-total">3</em>개
+                </div>
+                <a href="#" class="buy-good">
+                  총 <em id="buy-total-money">50,000</em>원 바구니 담기
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -1043,248 +821,202 @@
             </div>
             <div class="layout-right">
               <!-- 이용후기 슬라이드 -->
-              <div class="review-slide">
-                <div class="review-box">
-                  <a href="#">
-                    <div class="review-box-desc">
-                      <span class="review-box-title">
-                        한우고기곰국(냉동:1.1kg) 아주 맛있어요.
-                      </span>
-                      <span class="review-box-star"> 5.0 </span>
-                      <span class="review-box-img">
-                        <img src="images/reveiw_1.jpg" alt="사진" />
-                      </span>
-                    </div>
-                    <p class="review-box-txt">
-                      4식구 먹기에는 양이 좀 작아서 양파 하나를 곱게 채썰어서
-                      같이 볶아서 먹으면 저의 식구들 입맛 간에 맞아서 좋아요.
-                      덮밥으로 부어서 간단히 끼니 해결 하기도 좋아요..냉동
-                      제품이라 쟁여 놓고 싶은 품목이예요.
-                    </p>
-                    <span class="review-box-user"> 윤*아(한살림서울) </span>
-                  </a>
-                </div>
-                <div class="review-box">
-                  <a href="#">
-                    <div class="review-box-desc">
-                      <span class="review-box-title">
-                        한우고기곰국(냉동:1.1kg)
-                      </span>
-                      <span class="review-box-star"> 5.0 </span>
-                      <span class="review-box-img">
-                        <img src="images/reveiw_1.jpg" alt="사진" />
-                      </span>
-                    </div>
-                    <p class="review-box-txt">
-                      4식구 먹기에는 양이 좀 작아서 양파 하나를 곱게 채썰어서
-                      같이 볶아서 먹으면 저의 식구들 입맛 간에 맞아서 좋아요.
-                      덮밥으로 부어서 간단히 끼니 해결 하기도 좋아요..냉동
-                      제품이라 쟁여 놓고 싶은 품목이예요.
-                    </p>
-                    <span class="review-box-user"> 윤*아(한살림서울) </span>
-                  </a>
-                </div>
-                <div class="review-box">
-                  <a href="#">
-                    <div class="review-box-desc">
-                      <span class="review-box-title">
-                        한우고기곰국(냉동:1.1kg)
-                      </span>
-                      <span class="review-box-star"> 5.0 </span>
-                      <span class="review-box-img">
-                        <img src="images/reveiw_1.jpg" alt="사진" />
-                      </span>
-                    </div>
-                    <p class="review-box-txt">
-                      4식구 먹기에는 양이 좀 작아서 양파 하나를 곱게 채썰어서
-                      같이 볶아서 먹으면 저의 식구들 입맛 간에 맞아서 좋아요.
-                      덮밥으로 부어서 간단히 끼니 해결 하기도 좋아요..냉동
-                      제품이라 쟁여 놓고 싶은 품목이예요.
-                    </p>
-                    <span class="review-box-user"> 윤*아(한살림서울) </span>
-                  </a>
-                </div>
+              <div class="review-slide" id="data-review">
+                <!-- 외부 데이터 연동 -->
               </div>
               <!--// 이용후기 슬라이드 -->
             </div>
           </div>
         </div>
       </section>
-    <!-- 커뮤니티 -->
-    <section class="community">
-      <div class="container clearfix">
-        <div class="community-notice community-line">
-          <dl class="clearfix">
-            <dt>
-              <button class="community-bt community-bt-active">
-                공지사항
-              </button>
-            </dt>
-            <dd class="community-visible-active">
-              <ul class="notice-list">
-                <li>
-                  <a href="#">
-                    <span>
-                      장보기 서비스 일시중단 안내(2022년 11월 12일(토) 02시 ~
-                      12일(토) 03시)</span
-                    ><em>2022.11.15</em></a
-                  >
-                </li>
-                <li>
-                  <a href="#">
-                    <span>
-                      장보기 서비스 일시중단 안내(2022년 11월 12일(토) 02시 ~
-                      12일(토) 03시)</span
-                    ><em>2022.11.15</em></a
-                  >
-                </li>
-                <li>
-                  <a href="#">
-                    <span>
-                      장보기 서비스 일시중단 안내(2022년 11월 12일(토) 02시 ~
-                      12일(토) 03시)</span
-                    ><em>2022.11.15</em></a
-                  >
-                </li>
-                <li>
-                  <a href="#">
-                    <span>
-                      장보기 서비스 일시중단 안내(2022년 11월 12일(토) 02시 ~
-                      12일(토) 03시)</span
-                    ><em>2022.11.15</em></a
-                  >
-                </li>
-              </ul>
-            </dd>
+      <!-- 커뮤니티 -->
+      <section class="community">
+        <div class="container clearfix">
+          <div class="community-notice community-line">
+            <dl class="clearfix">
+              <dt>
+                <button class="community-bt community-bt-active">
+                  공지사항
+                </button>
+              </dt>
+              <dd class="community-visible-active">
+                <ul class="notice-list" id="data-notice">
+                  <!-- 외부 데이터 출력 -->
+                </ul>
+              </dd>
 
-            <dt><button class="community-bt">물품소식</button></dt>
+              <dt><button class="community-bt">물품소식</button></dt>
 
-            <dd>
-              <ul class="notice-list ">
-                <li>
-                  <a href="#">
-                    <span>
-                      장보기 서비스 일시중단 안내(2022년 11월 12일(토) 02시 ~
-                      12일(토) 03시)</span
-                    ><em>2022.11.15</em></a
-                  >
-                </li>
-                <li>
-                  <a href="#">
-                    <span>
-                      장보기 서비스 일시중단 안내(2022년 11월 12일(토) 02시 ~
-                      12일(토) 03시)</span
-                    ><em>2022.11.15</em></a
-                  >
-                </li>
-                <li>
-                  <a href="#">
-                    <span>
-                      장보기 서비스 일시중단 안내(2022년 11월 12일(토) 02시 ~
-                      12일(토) 03시)</span
-                    ><em>2022.11.15</em></a
-                  >
-                </li>
-                <li>
-                  <a href="#">
-                    <span>
-                      장보기 서비스 일시중단 안내(2022년 11월 12일(토) 02시 ~
-                      12일(토) 03시)</span
-                    ><em>2022.11.15</em></a
-                  >
-                </li>
-              </ul>
-            </dd>
-          </dl>
+              <dd>
+                <ul class="notice-list" id="data-goodnews">
+                  <!-- 외부 데이터 출력 -->
+                </ul>
+              </dd>
+            </dl>
+          </div>
+          <div class="community-info community-line">
+            <h3>조합원상담실</h3>
+            <a href="tel:1661-0800" class="tel">1661-0800</a>
+            <ul class="community-info-list">
+              <li>
+                <span class="t1">평일</span>
+                <b>오전 9시~오후 6시 (점심시간 12시~1시)</b>
+              </li>
+              <li><span class="t2">주말 및 공휴일 휴무</span></li>
+              <li>
+                <span class="t1">이메일</span>
+                <a href="mailto:hansalim@hansalim.or.kr"
+                  >hansalim@hansalim.or.kr</a
+                >
+              </li>
+              <li><span class="t3">* 매장 구입 물품은 해당 매장 문의</span></li>
+            </ul>
+          </div>
+          <div class="community-help">
+            <h3>자주 묻는 질문</h3>
+            <ul class="community-hlep-list clearfix">
+              <li><a href="#">조합원정보</a></li>
+              <li><a href="#">주문/결제</a></li>
+              <li><a href="#">취소/반품/환불</a></li>
+              <li><a href="#">공급</a></li>
+              <li><a href="#">이용안내</a></li>
+              <li><a href="#">기타</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="community-info community-line">
-          <h3>조합원상담실</h3>
-          <a href="tel:1661-0800" class="tel">1661-0800</a>
-          <ul class="community-info-list">
-            <li>
-              <span class="t1">평일</span
-              > <b>오전 9시~오후 6시 (점심시간 12시~1시)</b>
-            </li>
-            <li><span class="t2">주말 및 공휴일 휴무</span></li>
-            <li>
-              <span class="t1">이메일</span
-              > <a href="mailto:hansalim@hansalim.or.kr"
-                >hansalim@hansalim.or.kr</a
+      </section>
+      <!-- 하단 -->
+      <footer class="footer">
+        <div class="family-box">
+          <div class="family">
+            <div class="container">
+              <ul class="family-list">
+                <li>
+                  <p class="family-title">한살림 가족</p>
+                  <ul class="family-area">
+                    <li><a href="#">한살림연합</a></li>
+                    <li><a href="#">한살림생산자연합회</a></li>
+                    <li><a href="#">한살림연합 식생활센터</a></li>
+                    <li><a href="#">한살림재단</a></li>
+                    <li><a href="#">한살림펀딩</a></li>
+                    <li><a href="#">한살림연수원</a></li>
+                    <li><a href="#">한살림햇빛발전협동조합</a></li>
+                    <li><a href="#">모심과살림연구소</a></li>
+                    <li><a href="#">도서출판한살림</a></li>
+                    <li><a href="#">한살림참여인증</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p class="family-title">서울/경기</p>
+                  <ul class="family-area">
+                    <li><a href="#">한살림서울</a></li>
+                    <li><a href="#">한살림고양파주</a></li>
+                    <li><a href="#">한살림경기남부</a></li>
+                    <li><a href="#">한살림성남용인</a></li>
+                    <li><a href="#">한살림경기서남부</a></li>
+                    <li><a href="#">한살림경기동부</a></li>
+                    <li><a href="#">한살림수원</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p class="family-title">강원/충청</p>
+                  <ul class="family-area">
+                    <li><a href="#">한살림원주</a></li>
+                    <li><a href="#">한살림춘천</a></li>
+                    <li><a href="#">한살림강원영동</a></li>
+                    <li><a href="#">한살림청주</a></li>
+                    <li><a href="#">한살림대전</a></li>
+                    <li><a href="#">한살림천안아산</a></li>
+                    <li><a href="#">한살림충주제천</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p class="family-title">전라/경상</p>
+                  <ul class="family-area">
+                    <li><a href="#">한살림전북</a></li>
+                    <li><a href="#">한살림광주</a></li>
+                    <li><a href="#">한살림전남남부</a></li>
+                    <li><a href="#">한살림경북북부</a></li>
+                    <li><a href="#">한살림경북서부</a></li>
+                    <li><a href="#">한살림울산</a></li>
+                    <li><a href="#">한살림경남</a></li>
+                    <li><a href="#">한살림대구</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p class="family-title">경상/제주</p>
+                  <ul class="family-area">
+                    <li><a href="#">한살림부산</a></li>
+                    <li><a href="#">한살림경주</a></li>
+                    <li><a href="#">한살림경북동부</a></li>
+                    <li><a href="#">한살림제주</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <button class="family-close"><span>닫기</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-top">
+          <div class="container clearfix">
+            <ul class="footer-menu clearfix">
+              <li><a href="#">이용약관</a></li>
+              <li><a href="#">개인정보처리방침</a></li>
+              <li><a href="#">한살림소개</a></li>
+              <li><a href="#">소식지PDF</a></li>
+              <li><a href="#">주간한살림</a></li>
+              <li><a href="#">앱다운로드</a></li>
+            </ul>
+            <button class="footer-link">
+              한살림 가족 <span class="blank"></span>
+              지역한살림
+            </button>
+          </div>
+        </div>
+        <div class="footer-main">
+          <div class="container clearfix">
+            <div class="footer-copy">
+              <ul class="copy-list">
+                <li>
+                  <span>상호명 : 한살림소비자생활협동조합연합회</span>
+                  <span>대표자 : 조완석</span>
+                  <span>사업자등록번호 : <a href="#">126-82-12328</a></span>
+                  <span
+                    >통신판매업신고번호 :
+                    <a href="#">2014-경기안성-093호</a></span
+                  >
+                </li>
+                <li>
+                  안성사무소 : 경기 안성시 대덕면 안성대로 1526(보동리 285-3) /
+                  서울사무소 : 서울시 강남구 봉은사로81길 15(삼성동)
+                </li>
+                <li>
+                  <span>입점문의 : <a href="#">입점문의하기</a></span>
+                  <span
+                    >이메일 :
+                    <a href="mailto:hansalim@hansalim.or.kr"
+                      >hansalim@hansalim.or.kr</a
+                    ></span
+                  >
+                </li>
+              </ul>
+              <span class="copy-txt"
+                >이곳의 모든 저작권은 한살림에게 있습니다.</span
               >
-            </li>
-            <li><span class="t3">* 매장 구입 물품은 해당 매장 문의</span></li>
-          </ul>
+            </div>
+            <div class="footer-sns">
+              <ul class="sns-list clearfix">
+                <li><a href="#" class="is"></a></li>
+                <li><a href="#" class="fb"></a></li>
+                <li><a href="#" class="nb"></a></li>
+                <li><a href="#" class="yt"></a></li>
+                <li><a href="#" class="kk"></a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="community-help">
-          <h3>자주 묻는 질문</h3>
-          <ul class="community-hlep-list">
-            <li><a href="#">조합원정보</a></li>
-            <li><a href="#">주문/결제</a></li>
-            <li><a href="#">취소/반품/환불</a></li>
-            <li><a href="#">공급</a></li>
-            <li><a href="#">이용안내</a></li>
-            <li><a href="#">기타</a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-   <!-- 하단 -->
-   <footer class="footer">
-        
-    <div class="footer-top">
-      <div class="container clearfix">
-        <ul class="footer-menu clearfix">
-          <li><a href="#">이용약관</a></li>
-   <li><a href="#">개인정보처리방침</a></li>
-   <li><a href="#">한살림소개</a></li>
-   <li><a href="#">소식지PDF</a></li>
-   <li><a href="#">주간한살림</a></li>
-   <li><a href="#">앱다운로드</a></li>
-        </ul>
-          <button class=" footer-link">
-            한살림가족 <span class="blank"></span>
-            지역한살림
-          </button>
-        
-      </div>
-    </div>
-
-    <div class="footer-main">
-      <div class="container clearfix">
-        <div class="footer-copy">
-          <ul class="copy-list">
-            <li>
-              <span>상호명 : 한살림소비자생활협동조합연합회</span>
-              <span>대표자 : 조완석</span>
-              <span>사업자등록번호 : <a href="#">126-82-12328</a></span>
-              <span>통신판매업신고번호 : <a href="#">2014-경기안성-093호</a></span>
-            </li>
-            <li>
-              안성사무소 : 경기 안성시 대덕면 안성대로 1526(보동리 285-3) /
-              서울사무소 : 서울시 강남구 봉은사로81길 15(삼성동)
-            </li>
-            <li>
-              <span>입점문의 : <a href="#">입점문의하기</a></span>
-              <span>이메일 : <a href="mailto: hansalim@hansalim.or.kr"></a>hansalim@hansalim.or.kr</span>
-            </li>
-          </ul>
-          <span class="copy-txt"
-            >이곳의 모든 저작권은 한살림에게 있습니다.</span
-          >
-        </div>
-        <div class="footer-sns">
-          <ul class="sns-list clearfix">
-            <li><a href="#" class="is"></a></li>
-            <li><a href="#" class="fb"></a></li>
-            <li><a href="#" class="nb"></a></li>
-            <li><a href="#" class="yt"></a></li>
-            <li><a href="#" class="kk"></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    
-  </footer>
+      </footer>
     </div>
   </body>
 </html>
