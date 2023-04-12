@@ -152,20 +152,31 @@ body {
   width: 600px;
   height: 400px;
   border-radius: 20px;
-  background-color: #fff;
+  background-color: #f3eed0;
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
+.modal-txt{
+ text-align: center;
+ margin-top: 0px;
+ padding: 30px 30px;
+ line-height: 2;
+}
 .modal-close {
   position: absolute;
+  width: 50px;
+  height: 50px;
   right: 10px;
   top: 10px;
   cursor: pointer;
 }
+.email-link{
 
+  font-weight: 800;
+  border-bottom: 1px solid red;
+}
 .fadeOut {
   animation: fadeOut 0.3s forwards;
 }
