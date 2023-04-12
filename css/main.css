@@ -46,7 +46,7 @@ body {
   display: block;
   width: 85px;
 
-  z-index: 999999;
+  z-index: 999;
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 15px;
@@ -143,6 +143,7 @@ body {
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
   z-index: 99999;
+  display: block;
 }
 .modal-main {
   position: absolute;
@@ -179,6 +180,11 @@ body {
 }
 .fadeOut {
   animation: fadeOut 0.3s forwards;
+}
+@keyframes fadeOut {
+  100% {
+    opacity: 0;
+  }
 }
 /* 공통요소 */
 .clearfix::after {
